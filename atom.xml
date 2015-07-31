@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[徐佳琦的个人博客]]></title>
+  <link href="http://coderjackie.github.io/atom.xml" rel="self"/>
+  <link href="http://coderjackie.github.io/"/>
+  <updated>2015-07-31T15:48:58+08:00</updated>
+  <id>http://coderjackie.github.io/</id>
+  <author>
+    <name><![CDATA[徐佳琦]]></name>
+    <email><![CDATA[jackie0613@126.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[禁止某个Method]]></title>
+    <link href="http://coderjackie.github.io/blog/2015/07/27/jin-zhi-mou-ge-method/"/>
+    <updated>2015-07-27T15:57:48+08:00</updated>
+    <id>http://coderjackie.github.io/blog/2015/07/27/jin-zhi-mou-ge-method</id>
+    <content type="html"><![CDATA[<p>有时，不希望别人使用某个父类方法，比如，写了一个继承NSObject的类，不希望别人用init方法实例化。</p>
+
+<p>那么可以通过这个方法禁止掉，并且报错提示给别人：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#ifndef DOXYGEN_SHOULD_SKIP_THIS
+</span><span class='line'>// Disallow init and don't add to documentation
+</span><span class='line'>- (id)init __attribute__((unavailable("init is not a supported initializer for this class.")));
+</span><span class='line'>#endif
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img class="top" src="images/2015-07-27-2/image1.png"></p>
+
+<p><img class="top" src="images/2015-07-27-2/image2.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[设置UIAlert按钮颜色]]></title>
+    <link href="http://coderjackie.github.io/blog/2015/07/27/she-zhi-uialertan-niu-yan-se/"/>
+    <updated>2015-07-27T11:31:07+08:00</updated>
+    <id>http://coderjackie.github.io/blog/2015/07/27/she-zhi-uialertan-niu-yan-se</id>
+    <content type="html"><![CDATA[<p>需求：将UIAlertView的button文字改成指定颜色：</p>
+
+<p><img class="top" src="http://coderjackie.github.io/images/2015-07-27-1/image1.png"></p>
+
+<p>代码如下：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">UIAlertView</span> <span class="o">*</span><span class="n">alertView</span> <span class="o">=</span> <span class="o">[[</span><span class="no">UIAlertView</span> <span class="n">alloc</span><span class="o">]</span> <span class="ss">initWithTitle</span><span class="p">:</span><span class="err">@</span><span class="s2">&quot;&quot;</span> <span class="ss">message</span><span class="p">:</span><span class="err">@</span><span class="s2">&quot;设置按钮为红色&quot;</span> <span class="ss">delegate</span><span class="p">:</span><span class="kp">nil</span> <span class="ss">cancelButtonTitle</span><span class="p">:</span><span class="err">@</span><span class="s2">&quot;我是红色&quot;</span> <span class="ss">otherButtonTitles</span><span class="p">:</span><span class="kp">nil</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">[[</span><span class="no">UIView</span> <span class="n">appearance</span><span class="o">]</span> <span class="ss">setTintColor</span><span class="p">:</span><span class="o">[</span><span class="no">UIColor</span> <span class="n">redColor</span><span class="o">]]</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span><span class="n">alertView</span> <span class="n">show</span><span class="o">]</span><span class="p">;</span>      
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后要在点击按钮的时候将tintColor置空，因为默认UIView的appearance是为nil的：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">+</span> <span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="ss">alertView</span><span class="p">:(</span><span class="no">UIAlertView</span> <span class="o">*</span><span class="p">)</span><span class="n">alertView</span> <span class="ss">didDismissWithButtonIndex</span><span class="p">:(</span><span class="no">NSInteger</span><span class="p">)</span><span class="n">buttonIndex</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">buttonIndex</span> <span class="o">==</span> <span class="o">[</span><span class="n">alertView</span> <span class="n">cancelButtonIndex</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="o">[[</span><span class="no">UIView</span> <span class="n">appearance</span><span class="o">]</span> <span class="ss">setTintColor</span><span class="p">:</span><span class="kp">nil</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[xcode删除多余证书文件]]></title>
+    <link href="http://coderjackie.github.io/blog/2015/07/13/xcodeshan-chu-duo-yu-zheng-shu-wen-jian/"/>
+    <updated>2015-07-13T16:37:54+08:00</updated>
+    <id>http://coderjackie.github.io/blog/2015/07/13/xcodeshan-chu-duo-yu-zheng-shu-wen-jian</id>
+    <content type="html"><![CDATA[<p>删除xcode多余的证书描述文件：</p>
+
+<p><img class="top" src="http://coderjackie.github.io/images/2015-07-13/QQ20150713-1@2x.png"></p>
+
+<p>找到目录：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~/Library/MobileDevice/Provisioning Profiles
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>找到对应描述文件名删除，重启xcode即可。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[多电脑编写octopress]]></title>
+    <link href="http://coderjackie.github.io/blog/2015/07/13/duo-dian-nao-bian-xie-octopress/"/>
+    <updated>2015-07-13T14:16:20+08:00</updated>
+    <id>http://coderjackie.github.io/blog/2015/07/13/duo-dian-nao-bian-xie-octopress</id>
+    <content type="html"><![CDATA[<ol>
+<li><p>建立公钥私钥</p>
+
+<pre><code class="`"> ssh-keygen -t rsa
+</code></pre></li>
+<li><p>在/Users/xujiaqi/.ssh找到id_rsa.pub文件，打记事本打开将其中全部内容复制，粘贴到github或gitcafe的SSH管理里面。</p></li>
+<li><p>检查是否可以连接到github或gitcafe</p>
+
+<pre><code class="`"> ssh -T git@github.com
+ 或
+ ssh -T git@gitcafe.com
+</code></pre>
+
+<p>连接成功：</p>
+
+<pre><code class="``">  Hi coderJackie! You've successfully authenticated, but GitCafe does not provide shell access.
+</code></pre></li>
+<li><p>将博客的源文件clone到本地的octopress文件夹内。</p>
+
+<pre><code class="`"> xujiaqideMac-mini:octopress xujiaqi$ git clone -b source    git@github.com:CoderJackie/coderjackie.github.com.git octopress
+</code></pre></li>
+<li><p>将博客文件clone到octopress的_deploy文件夹内。</p>
+
+<pre><code class="`"> xujiaqideMac-mini:octopress xujiaqi$ cd octopress
+ xujiaqideMac-mini:octopress xujiaqi$ git clone git@github.com:CoderJackie/  coderjackie.github.com.git _deploy
+</code></pre></li>
+<li><p>安装bundler,rake,如安装过则不需要</p>
+
+<pre><code class="`"> cd octopress
+ sudo gem install bundler
+ bundle install
+ rake install （不需要，会覆盖掉原来的主题）
+</code></pre></li>
+<li><p>最后就可以在这台电脑上写博客了</p>
+
+<pre><code class="`"> rake new_post["myBlog"]
+</code></pre></li>
+<li><p>编写完博客要上传到github</p>
+
+<pre><code class="`"> rake generate
+ git add .
+ git commit -m "Some comment here." 
+ git push origin source
+ rake deploy
+</code></pre></li>
+<li><p>如果无法push到仓库的master分支，尝试在项目目录的.git/config中添加</p>
+
+<pre><code class="`"> [branch "master"]
+  remote = origin
+  merge = refs/heads/master
+</code></pre>
+
+<p> <strong>为防止多台电脑编辑，每次编写前先要pull一下</strong></p>
+
+<pre><code class="`"> $ cd octopress
+ $ git pull origin source  # update the local source branch
+ $ cd ./_deploy
+ $ git pull origin master  # update the local master branch
+</code></pre></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[网页唤醒iOS应用]]></title>
+    <link href="http://coderjackie.github.io/blog/2015/02/09/inter-app-communication/"/>
+    <updated>2015-02-09T03:39:49+08:00</updated>
+    <id>http://coderjackie.github.io/blog/2015/02/09/inter-app-communication</id>
+    <content type="html"><![CDATA[<h2>应用间通讯（Inter-App Communication）</h2>
+
+<hr />
+
+<p>前段时间在逛一号店时候发现有个活动，4999抢iPhone6，只支持手机端，扫描二维码后发现是打开个网页，所以就想到在电脑上打开网页会不会更容易抢到iPhone呢。</p>
+
+<!--more-->
+
+
+<p>首先，用二维码扫描软件扫描发现其地址为 <a href="http://m.yhd.com/sale/134743">http://m.yhd.com/sale/134743</a>,点击4999抢iPhone会跳到iTunes下载页，然后试了下在手机的safari中打开这个<a href="http://m.yhd.com/sale/134743">网址</a>是跳到一号店app中，之前用百度地图和账上生活时遇到过这种情况，但是并没有去研究怎么实现。</p>
+
+<p>回到正题，在点击4999抢iPhone的链接后查看了一下他网页的源码:</p>
+
+<pre><code class="`javascript">
+    &lt;!DOCTYPE HTML&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="Description" content="手机购物，手机团购，进口，食品，饮料，母婴，超市，1号店 "/&gt;
+        &lt;meta name="Keywords" content="手机购物，手机团购，进口，食品，饮料，母婴，超市，1号店 "/&gt;
+        &lt;title&gt;促销活动,掌上一号店,掌上1号店,比超市更便宜，-1号店&lt;/title&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"&gt;
+        &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+        &lt;meta name="apple-mobile-web-app-status-bar-style" content="black"&gt;
+        &lt;meta name="format-detection" content="telephone=no"&gt;
+        &lt;script type="text/javascript" src="http://image.yihaodianimg.com/mobile-website/js/tracker_top.js"&gt;&lt;/script&gt;
+    &lt;script&gt;var _hmt = _hmt || [];_hmt.push(['_setCustomVar', 4,  'yihaodian', 'yihaodian', 1]);&lt;/script&gt;&lt;/head&gt;
+    &lt;script&gt;
+        var tu="10305758297";
+        var sd="null";
+    &lt;/script&gt;
+    &lt;body &gt;
+
+
+    &lt;script type="text/javascript" src="http://image.yihaodianimg.com/mobile-website/js/jq.1.7.min.js?v=20140408"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="http://image.yihaodianimg.com/mobile-website/js/jquery.lazyload.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="http://image.yihaodianimg.com/mobile-website/js/jquery.cookie.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="http://image.yihaodianimg.com/mobile-website/js/tracker.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="http://image.yihaodianimg.com/mobile-website/js/tracker_hijack.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+    goapp('9');
+    function goapp(type) {
+    //1-cms;2-商品详情；3-团购；4-摇一摇；5-商品搜索；6-赠品；7-n元n件；8-满减;9-首页
+     if(type==1){
+         cms('0','0','false');
+     }else if(type==2){
+         prodetail('0','0','null','null');
+     }else if(type==3){
+         grpetail('0','0');
+     }else if(type==4){
+         rockhomepage();
+     }else if(type==5){
+         search('0');
+     }else if(type ==6){
+         promofree();
+     }else if(type ==7){
+       promonn('0','0');
+     }else if(type ==8){
+        promocutoff('0')
+     }else if(type ==9){
+        goindex();
+     }
+
+    }
+    //cms活动页
+    function cms(cmsid,provinceId,idexistflag) {
+
+        urlGo("yhd://cms/"+cmsid+"_"+provinceId);
+
+        var url;
+        if(idexistflag=='true'){
+          url ="urlGo('http://m.yhd.com/mw/cms/"+cmsid+"/20/"+provinceId+"')";
+          //url ="urlGo('http://m.yhd.com/mw/newcms/"+cmsid+"?provinceId="+provinceId+"')";
+        }else{
+         url ='urlGo("http://m.yhd.com/mw/d")';
+        }
+         setTimeout(url,3000);
+    }
+    //商品详情
+    function prodetail(proid,provinceId,promotionid,pmid) {
+        var promotionidwebsite = promotionid;
+        if(promotionidwebsite ==null || promotionidwebsite=='null'){
+          promotionidwebsite ="";
+        }
+
+        if(promotionid ==null || promotionid=='null'){
+          promotionid ="";
+        }else{
+          promotionid="_"+promotionid
+        }
+        if(pmid ==null || pmid=='null'){
+            pmid="_0";
+        }else{
+            pmid="_"+pmid;
+        }
+        var url="";
+        if(tu &amp;&amp; sd){
+            url="http://m.yhd.com/mw/productsquid/"+proid+"/"+provinceId+"/20/"+promotionidwebsite+"?tracker_u="+tu+"&amp;source_id="+sd;
+        }else{
+            url="http://m.yhd.com/mw/productsquid/"+proid+"/"+provinceId+"/20/"+promotionidwebsite;
+        }
+        // var url ="urlGo()";
+
+            urlGo("yhd://product/"+proid+"_"+provinceId+promotionid+pmid);
+
+        setTimeout(function(){
+            urlGo(url);
+        },3000);
+    }
+    //团购
+    function grpetail(grpid,provinceId) {
+
+           urlGo("yhd://groupon/"+grpid+"_"+provinceId);
+
+        var url ="urlGo('http://m.yhd.com/mw/groupdetail/"+grpid+"/"+provinceId+"')";
+        setTimeout(url,3000);
+    }
+    //摇一摇
+    function rockhomepage() {
+
+        urlGo("yhd://rockhomepage/");
+
+        setTimeout('urlGo("http://m.yhd.com/mw/d")',3000);
+    }
+    //商品搜索
+    function search(keyword) {
+
+        urlGo("yhd://search/"+keyword+"_1_1");
+
+        var url ="urlGo('http://m.yhd.com/mw/search?keyword="+keyword+"&amp;searchid=1&amp;serchtype=')";
+        setTimeout(url,3000);
+    }
+    //赠品促销
+    function promofree() {
+
+        urlGo("yhd://promofree/1_1");
+
+        setTimeout('urlGo("http://m.yhd.com/mw/d")',3000);
+    }
+    //n元n件促销
+    function promonn(promotionid,levelid) {
+
+        urlGo("yhd://promonn/"+promotionid+"_"+levelid);
+
+        setTimeout('urlGo("http://m.yhd.com/mw/d")',3000);
+    }
+    //满减列表促销
+    function promocutoff(promotionid) {
+
+        urlGo("yhd://promocutoff/"+promotionid);
+
+        setTimeout('urlGo("http://m.yhd.com/mw/d")',3000);
+    }
+    //首页
+    function goindex() {
+
+          urlGo("yhd://home/");
+
+        setTimeout('urlGo("http://m.yhd.com/mw/d")',3000);
+    }
+
+    function urlGo(url){
+        setTimeout(function(){
+            window.location = url;
+        },10);
+    } 
+    &lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+
+<p> 一号店的工程师还挺负责的，都写上了注释。原来他是用 <a href="yhd://">yhd://</a>这个协议唤醒了app，通过搜索引擎一番搜索才知道，原来这个就是通过URL scheme来打开的，相信做过app分享的都不陌生，通过设置程序的URL scheme来打开微信、微博等社交软件，但是之前不知道这个scheme还可以通过网页来唤醒app。看到苹果官方文档，原来这个就是应用间通讯(Inter-App Communication)。通过在appdelegate中可以对链接进行判断跳转，官方示例：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+</pre></td><td class='code'><pre><code class='C'><span class='line'><span class="o">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nl">application</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="n">application</span> <span class="nl">openURL</span><span class="p">:(</span><span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="n">url</span>
+</span><span class='line'>        <span class="nl">sourceApplication</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">sourceApplication</span> <span class="nl">annotation</span><span class="p">:(</span><span class="n">id</span><span class="p">)</span><span class="n">annotation</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">if</span> <span class="p">([[</span><span class="n">url</span> <span class="n">scheme</span><span class="p">]</span> <span class="nl">isEqualToString</span><span class="p">:</span><span class="err">@</span><span class="s">&quot;todolist&quot;</span><span class="p">])</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">ToDoItem</span> <span class="o">*</span><span class="n">item</span> <span class="o">=</span> <span class="p">[[</span><span class="n">ToDoItem</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+</span><span class='line'>        <span class="n">NSString</span> <span class="o">*</span><span class="n">taskName</span> <span class="o">=</span> <span class="p">[</span><span class="n">url</span> <span class="n">query</span><span class="p">];</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">taskName</span> <span class="o">||</span> <span class="o">!</span><span class="p">[</span><span class="n">self</span> <span class="nl">isValidTaskString</span><span class="p">:</span><span class="n">taskName</span><span class="p">])</span> <span class="p">{</span> <span class="c1">// must have a task name</span>
+</span><span class='line'>            <span class="k">return</span> <span class="n">NO</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">taskName</span> <span class="o">=</span> <span class="p">[</span><span class="n">taskName</span> <span class="nl">stringByReplacingPercentEscapesUsingEncoding</span><span class="p">:</span><span class="n">NSUTF8StringEncoding</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">item</span><span class="p">.</span><span class="n">toDoTask</span> <span class="o">=</span> <span class="n">taskName</span><span class="p">;</span>
+</span><span class='line'>        <span class="n">NSString</span> <span class="o">*</span><span class="n">dateString</span> <span class="o">=</span> <span class="p">[</span><span class="n">url</span> <span class="n">fragment</span><span class="p">];</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">dateString</span> <span class="o">||</span> <span class="p">[</span><span class="n">dateString</span> <span class="nl">isEqualToString</span><span class="p">:</span><span class="err">@</span><span class="s">&quot;today&quot;</span><span class="p">])</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">item</span><span class="p">.</span><span class="n">dateDue</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
+</span><span class='line'>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">[</span><span class="n">self</span> <span class="nl">isValidDateString</span><span class="p">:</span><span class="n">dateString</span><span class="p">])</span> <span class="p">{</span>
+</span><span class='line'>                <span class="k">return</span> <span class="n">NO</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>            <span class="c1">// format: yyyymmddhhmm (24-hour clock)</span>
+</span><span class='line'>            <span class="n">NSString</span> <span class="o">*</span><span class="n">curStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">dateString</span> <span class="nl">substringWithRange</span><span class="p">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)];</span>
+</span><span class='line'>            <span class="n">NSInteger</span> <span class="n">yeardigit</span> <span class="o">=</span> <span class="p">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="p">];</span>
+</span><span class='line'>            <span class="n">curStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">dateString</span> <span class="nl">substringWithRange</span><span class="p">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)];</span>
+</span><span class='line'>            <span class="n">NSInteger</span> <span class="n">monthdigit</span> <span class="o">=</span> <span class="p">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="p">];</span>
+</span><span class='line'>            <span class="n">curStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">dateString</span> <span class="nl">substringWithRange</span><span class="p">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)];</span>
+</span><span class='line'>            <span class="n">NSInteger</span> <span class="n">daydigit</span> <span class="o">=</span> <span class="p">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="p">];</span>
+</span><span class='line'>            <span class="n">curStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">dateString</span> <span class="nl">substringWithRange</span><span class="p">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">)];</span>
+</span><span class='line'>            <span class="n">NSInteger</span> <span class="n">hourdigit</span> <span class="o">=</span> <span class="p">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="p">];</span>
+</span><span class='line'>            <span class="n">curStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">dateString</span> <span class="nl">substringWithRange</span><span class="p">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)];</span>
+</span><span class='line'>            <span class="n">NSInteger</span> <span class="n">minutedigit</span> <span class="o">=</span> <span class="p">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="n">NSDateComponents</span> <span class="o">*</span><span class="n">dateComps</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSDateComponents</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+</span><span class='line'>            <span class="p">[</span><span class="n">dateComps</span> <span class="nl">setYear</span><span class="p">:</span><span class="n">yeardigit</span><span class="p">];</span>
+</span><span class='line'>            <span class="p">[</span><span class="n">dateComps</span> <span class="nl">setMonth</span><span class="p">:</span><span class="n">monthdigit</span><span class="p">];</span>
+</span><span class='line'>            <span class="p">[</span><span class="n">dateComps</span> <span class="nl">setDay</span><span class="p">:</span><span class="n">daydigit</span><span class="p">];</span>
+</span><span class='line'>            <span class="p">[</span><span class="n">dateComps</span> <span class="nl">setHour</span><span class="p">:</span><span class="n">hourdigit</span><span class="p">];</span>
+</span><span class='line'>            <span class="p">[</span><span class="n">dateComps</span> <span class="nl">setMinute</span><span class="p">:</span><span class="n">minutedigit</span><span class="p">];</span>
+</span><span class='line'>            <span class="n">NSCalendar</span> <span class="o">*</span><span class="n">calendar</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">NSCalendar</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithCalendarIdentifier</span><span class="p">:</span><span class="n">NSGregorianCalendar</span><span class="p">];</span>
+</span><span class='line'>            <span class="n">NSDate</span> <span class="o">*</span><span class="n">itemDate</span> <span class="o">=</span> <span class="p">[</span><span class="n">calendar</span> <span class="nl">dateFromComponents</span><span class="p">:</span><span class="n">dateComps</span><span class="p">];</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">itemDate</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>                <span class="k">return</span> <span class="n">NO</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>            <span class="n">item</span><span class="p">.</span><span class="n">dateDue</span> <span class="o">=</span> <span class="n">itemDate</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="p">[(</span><span class="n">NSMutableArray</span> <span class="o">*</span><span class="p">)</span><span class="n">self</span><span class="p">.</span><span class="n">list</span> <span class="nl">addObject</span><span class="p">:</span><span class="n">item</span><span class="p">];</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">YES</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">NO</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>可以用这个地址打开app，并且在appdelegate中对地址进行分析，得到产品id，活动类型，来负责跳到不同界面。</p>
+
+<p>最后吐槽一号店，活动前一天并没有限制必须跳转到app，所以我保存了iPhone抢购的详情页，第二天抢购的时候用电脑浏览器刷新时间，iPhone一秒钟全部抢光，但是已售出才10几件，明显是在坑人啊。第二轮抢购发现他限制必须进入app抢购，这明显阻挡不了程序员啊，通过charles分析抓包找到了真是地址，发现第二轮已经去掉了已售出记录，大公司还来这一套，可惜了我定了5个闹钟，唯一收获就是学到了通过设置URL scheme在其他应用来唤醒app。</p>
+
+<p>官方文档 <a href="https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html">Inter-App Communication</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[octopress绑定个人域名]]></title>
+    <link href="http://coderjackie.github.io/blog/2015/01/25/bangdingyuming/"/>
+    <updated>2015-01-25T00:28:46+08:00</updated>
+    <id>http://coderjackie.github.io/blog/2015/01/25/bangdingyuming</id>
+    <content type="html"><![CDATA[<p>一直想拥有一个个人域名，前几天无聊去Godaddy上搜了一下，发现<a href="http://www.xujiaqi.info">http://www.xujiaqi.info</a>域名才20元一年，直接入手，接下来就是域名解析了。</p>
+
+<p>域名解析使用的国内<a href="http://www.dnspod.cn">DNSPOD</a>,首先在Godaddy上修改DNS地址。</p>
+
+<!--more-->
+
+
+<ol>
+<li><p>登录<a href="http://www.godaddy.com">www.godaddy.com</a>  ！</p></li>
+<li><p>点击 Manage My Domains</p></li>
+</ol>
+
+
+<p><img class="top" src="http://coderjackie.github.io/images/2015-01-25/image1@2x.png"></p>
+
+<ol>
+<li>点击【Set NameServers】</li>
+</ol>
+
+
+<p><img class="top" src="http://coderjackie.github.io/images/2015-01-25/image2@2x.png"></p>
+
+<ol>
+<li>然后添加两个NAMESERVERS</li>
+</ol>
+
+
+<p><img class="top" src="http://coderjackie.github.io/images/2015-01-25/image3@2x.png"></p>
+
+<p>首先在<a href="http://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9#wiki">根据gitcafe</a>上教程，在项目管理里添加域名，比如我添加了:</p>
+
+<p><img class="top" src="http://coderjackie.github.io/images/2015-01-25/image5@2x.png"></p>
+
+<p>然后在<a href="http://www.dnspod.cn">DNSPOD</a>上注册一个账户，然后添加域名，并添加A记录或者设置CNAME</p>
+
+<p><img class="top" src="http://coderjackie.github.io/images/2015-01-25/image4@2x.png"></p>
+
+<p>现在你就可以在浏览器中直接打开你的域名了, 可以通过
+<a href="http://xujiaqi.info">http://xujiaqi.info</a>，
+<a href="http://www.xujiaqi.info">http://www.xujiaqi.info</a>，
+<a href="http://blog.xujiaqi.info">http://blog.xujiaqi.info</a>，
+<a href="http://m.xujiaqi.info">http://m.xujiaqi.info</a>来打开你的博客了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[搭建基于octopress的个人blog]]></title>
+    <link href="http://coderjackie.github.io/blog/2015/01/08/bulid-blog-by-octopress/"/>
+    <updated>2015-01-08T00:35:45+08:00</updated>
+    <id>http://coderjackie.github.io/blog/2015/01/08/bulid-blog-by-octopress</id>
+    <content type="html"><![CDATA[<p>想要有一个自己的独立博客是很久之前的事。</p>
+
+<p>以前也在其他网站上写过自己的博客，但总觉得用的不顺手，感觉少了归属感，最主要是提供的界面感觉都不怎么好。</p>
+
+<p>最近想学学<strong>Git</strong>，知道了<strong>Github</strong>，开始以为就是个代码仓库，后来才发现还提供了page服务，可以用来在上面搭建自己的<strong>独立博客</strong>。</p>
+
+<p>在Github上搭建博客可以利用<a href="https://github.com/mojombo/jekyll/wiki">Jekyll</a>或者<a href="http://octopress.org/">Octopress</a>，Octopress是在Jekyll上建立起来的，即使没有网站设计经验的人也能够快速搭建起自己的博客。</p>
+
+<!--more-->
+
+
+<p>Jekyll和Octopress都是利用<strong>Ruby</strong>实现的，因此在搭建自己博客的过程中难免要接触到一些Ruby的东西，嗯，这说不定也是一个让自己开始了解Ruby的契机。</p>
+
+<p>整个博客的内容和设置都是通过Git进行版本管理的，其中当然需要了解一些基本的Git操作，其实也没有几个常用的命令。</p>
+
+<p>Mac OS 10.10.1</p>
+
+<p>下面是我用Octopress搭建博客的过程:</p>
+
+<h2>安装和设置Git</h2>
+
+<h2>安装Ruby环境</h2>
+
+<h2>安装Octopress</h2>
+
+<p>先通过Git从Github上克隆一份Octopress</p>
+
+<pre><code>git clone git://github.com/imathis/octopress.git octopress
+</code></pre>
+
+<p>然后安装一些依赖的工具</p>
+
+<pre><code>cd octopress
+ruby --version 
+gem install bundler
+bundle install
+</code></pre>
+
+<p>安装Octopress默认的Theme</p>
+
+<pre><code>rake install
+</code></pre>
+
+<h2>配置Octopress</h2>
+
+<h2>开始写博文</h2>
+
+<h2>预览效果</h2>
+
+<p>在修改设置或者写完文章后，想看看具体效果，可以通过如下命令来完成:</p>
+
+<pre><code>rake generate
+rake preview
+</code></pre>
+
+<p>然后在浏览器中<a href="http://localhost:4000/">打开</a>来看一看效果。</p>
+
+<h2>将博客部署到Github上</h2>
+
+<p>在预览的效果符合自己的预期后，就可以通过如下命令将内容部署到Github上了。</p>
+
+<p>第一次部署前需要先要在Github上创建一个<strong>username.github.com</strong>的repository，
+然后通过<code>rake setup_github_pages</code>将自己的Blog与上述的repository关联起来。
+在其过程中根据提示输入<strong>username.github.com</strong>。</p>
+
+<p>然后就可以通过下面的命令来部署自己的博客内容至Github了:</p>
+
+<pre><code>rake deploy
+git status
+git add .
+git commit -a -m 'comment'
+git push origin source
+</code></pre>
+
+<h2>开始浏览自己的博客</h2>
+
+<p>在浏览器的地址栏中输入<strong>username.github.com</strong>，打开的网站就是自己的博客了，此刻一个独立博客就如此问世了!</p>
+
+<p>以后就可以享受这种以Geek方式来写博客的生活了!</p>
+]]></content>
+  </entry>
+  
+</feed>
