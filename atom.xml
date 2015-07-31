@@ -4,7 +4,7 @@
   <title><![CDATA[徐佳琦的个人博客]]></title>
   <link href="http://coderjackie.github.io/atom.xml" rel="self"/>
   <link href="http://coderjackie.github.io/"/>
-  <updated>2015-07-31T15:51:58+08:00</updated>
+  <updated>2015-07-31T15:54:26+08:00</updated>
   <id>http://coderjackie.github.io/</id>
   <author>
     <name><![CDATA[徐佳琦]]></name>
@@ -26,16 +26,20 @@
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#ifndef DOXYGEN_SHOULD_SKIP_THIS</span>
-</span><span class='line'><span class="sr">//</span> <span class="no">Disallow</span> <span class="n">init</span> <span class="ow">and</span> <span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">add</span> <span class="n">to</span> <span class="n">documentation</span>
-</span><span class='line'>   <span class="o">-</span> <span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="n">init</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">unavailable</span><span class="p">(</span><span class="s2">&quot;init is not a supported initializer for this class.&quot;</span><span class="p">)));</span>
-</span><span class='line'><span class="c1">#endif</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="c1">#ifndef DOXYGEN_SHOULD_SKIP_THIS</span>
+</span><span class='line'>
+</span><span class='line'> <span class="sr">//</span> <span class="no">Disallow</span> <span class="n">init</span> <span class="ow">and</span> <span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">add</span> <span class="n">to</span> <span class="n">documentation</span>
+</span><span class='line'> <span class="o">-</span> <span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="n">init</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">unavailable</span><span class="p">(</span><span class="s2">&quot;init is not a supported initializer for this class.&quot;</span><span class="p">)));</span>
+</span><span class='line'>
+</span><span class='line'> <span class="c1">#endif</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img class="top" src="images/2015-07-27-2/image1.png"></p>
+<p><img class="top" src="http://coderjackie.github.io/images/2015-07-27-2/image1.png"></p>
 
-<p><img class="top" src="images/2015-07-27-2/image2.png"></p>
+<p><img class="top" src="http://coderjackie.github.io/images/2015-07-27-2/image2.png"></p>
 ]]></content>
   </entry>
   
