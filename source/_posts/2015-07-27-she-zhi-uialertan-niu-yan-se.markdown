@@ -13,26 +13,26 @@ categories: iOS
 
 代码如下：
 
-```
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"设置按钮为红色" delegate:nil cancelButtonTitle:@"我是红色" otherButtonTitles:nil];
-	    
-    [[UIView appearance] setTintColor:[UIColor redColor]];
-	   
-    [alertView show];  	
+```ruby
+UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"设置按钮为红色" delegate:nil cancelButtonTitle:@"我是红色" otherButtonTitles:nil];
+
+[[UIView appearance] setTintColor:[UIColor redColor]];
+
+[alertView show];  	
     
 ```
 
 
-然后要在点击按钮的时候将tintColor置空，因为默认UIView的appearance是为nil的：
+然后要在点击按钮的时候将tintColor置空，因为默认UIView appearance的tintColor是为nil的：
 
 
-```
-	+ (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-	{
-		if (buttonIndex == [alertView cancelButtonIndex]) {
-			[[UIView appearance] setTintColor:nil];
-		}
+```ruby
++ (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+	if (buttonIndex == [alertView cancelButtonIndex]) {
+		[[UIView appearance] setTintColor:nil];
 	}
+}
 
 ```
 	

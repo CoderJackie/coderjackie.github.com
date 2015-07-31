@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "xcode删除多余证书文件"
+title: "删除Xcode多余描述文件"
 date: 2015-07-13 16:37:54 +0800
 comments: true
 categories: iOS
@@ -12,9 +12,9 @@ categories: iOS
 
 找到目录：
 
-```
+```ruby
 ~/Library/MobileDevice/Provisioning Profiles
 
 ```
 
-找到对应描述文件名删除，重启xcode即可。
+找到对应描述文件名删除，重启Xcode即可。

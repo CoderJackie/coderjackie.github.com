@@ -11,14 +11,19 @@ categories: iOS
 
 那么可以通过这个方法禁止掉，并且报错提示给别人：
 
-```
-	#ifndef DOXYGEN_SHOULD_SKIP_THIS
-	// Disallow init and don't add to documentation
-    - (id)init __attribute__((unavailable("init is not a supported initializer for this class.")));
-	#endif
+```ruby
+ #ifndef DOXYGEN_SHOULD_SKIP_THIS
+
+ // Disallow init and don't add to documentation
+ - (id)init __attribute__((unavailable("init is not a supported initializer for this class.")));
+ 
+ #endif
 
 ```
+ ---
 
-{% img top images/2015-07-27-2/image1.png%}
+{% img top /images/2015-07-27-2/image1.png %}
 
-{% img top images/2015-07-27-2/image2.png%}
+{% img top /images/2015-07-27-2/image2.png %}
+
+ ---
