@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | 徐佳琦的个人博客]]></title>
   <link href="http://coderjackie.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://coderjackie.github.io/"/>
-  <updated>2015-07-31T15:56:55+08:00</updated>
+  <updated>2015-07-31T15:58:51+08:00</updated>
   <id>http://coderjackie.github.io/</id>
   <author>
     <name><![CDATA[徐佳琦]]></name>
@@ -19,66 +19,95 @@
     <updated>2015-07-13T14:16:20+08:00</updated>
     <id>http://coderjackie.github.io/blog/2015/07/13/duo-dian-nao-bian-xie-octopress</id>
     <content type="html"><![CDATA[<ol>
-<li><p>建立公钥私钥</p>
+<li>建立公钥私钥</li>
+</ol>
 
-<pre><code class="`"> ssh-keygen -t rsa
-</code></pre></li>
+
+<pre><code class="ruby">ssh-keygen -t rsa
+</code></pre>
+
+<ol>
 <li><p>在/Users/xujiaqi/.ssh找到id_rsa.pub文件，打记事本打开将其中全部内容复制，粘贴到github或gitcafe的SSH管理里面。</p></li>
-<li><p>检查是否可以连接到github或gitcafe</p>
+<li><p>检查是否可以连接到github或gitcafe</p></li>
+</ol>
 
-<pre><code class="`"> ssh -T git@github.com
- 或
- ssh -T git@gitcafe.com
+
+<pre><code class="ruby">ssh -T git@github.com
+或
+ssh -T git@gitcafe.com
 </code></pre>
 
 <p>连接成功：</p>
 
-<pre><code class="``">  Hi coderJackie! You've successfully authenticated, but GitCafe does not provide shell access.
-</code></pre></li>
-<li><p>将博客的源文件clone到本地的octopress文件夹内。</p>
-
-<pre><code class="`"> xujiaqideMac-mini:octopress xujiaqi$ git clone -b source    git@github.com:CoderJackie/coderjackie.github.com.git octopress
-</code></pre></li>
-<li><p>将博客文件clone到octopress的_deploy文件夹内。</p>
-
-<pre><code class="`"> xujiaqideMac-mini:octopress xujiaqi$ cd octopress
- xujiaqideMac-mini:octopress xujiaqi$ git clone git@github.com:CoderJackie/  coderjackie.github.com.git _deploy
-</code></pre></li>
-<li><p>安装bundler,rake,如安装过则不需要</p>
-
-<pre><code class="`"> cd octopress
- sudo gem install bundler
- bundle install
- rake install （不需要，会覆盖掉原来的主题）
-</code></pre></li>
-<li><p>最后就可以在这台电脑上写博客了</p>
-
-<pre><code class="`"> rake new_post["myBlog"]
-</code></pre></li>
-<li><p>编写完博客要上传到github</p>
-
-<pre><code class="`"> rake generate
- git add .
- git commit -m "Some comment here." 
- git push origin source
- rake deploy
-</code></pre></li>
-<li><p>如果无法push到仓库的master分支，尝试在项目目录的.git/config中添加</p>
-
-<pre><code class="`"> [branch "master"]
-  remote = origin
-  merge = refs/heads/master
+<pre><code class="ruby">Hi coderJackie! You've successfully authenticated, but GitCafe does not provide shell access.
 </code></pre>
 
-<p> <strong>为防止多台电脑编辑，每次编写前先要pull一下</strong></p>
-
-<pre><code class="`"> $ cd octopress
- $ git pull origin source  # update the local source branch
- $ cd ./_deploy
- $ git pull origin master  # update the local master branch
-</code></pre></li>
+<ol>
+<li>将博客的源文件clone到本地的octopress文件夹内。</li>
 </ol>
 
+
+<pre><code class="ruby">xujiaqideMac-mini:octopress xujiaqi$ git clone -b source    git@github.com:CoderJackie/coderjackie.github.com.git octopress
+</code></pre>
+
+<ol>
+<li>将博客文件clone到octopress的_deploy文件夹内。</li>
+</ol>
+
+
+<pre><code class="ruby">xujiaqideMac-mini:octopress xujiaqi$ cd octopress
+xujiaqideMac-mini:octopress xujiaqi$ git clone git@github.com:CoderJackie/  coderjackie.github.com.git _deploy
+</code></pre>
+
+<ol>
+<li>安装bundler,rake,如安装过则不需要</li>
+</ol>
+
+
+<pre><code class="ruby">cd octopress
+sudo gem install bundler
+bundle install
+rake install （不需要，会覆盖掉原来的主题）
+</code></pre>
+
+<ol>
+<li>最后就可以在这台电脑上写博客了</li>
+</ol>
+
+
+<pre><code class="ruby">rake new_post["myBlog"]
+</code></pre>
+
+<ol>
+<li>编写完博客要上传到github</li>
+</ol>
+
+
+<pre><code class="ruby">rake generate
+git add .
+git commit -m "Some comment here." 
+git push origin source
+rake deploy
+</code></pre>
+
+<ol>
+<li>如果无法push到仓库的master分支，尝试在项目目录的.git/config中添加</li>
+</ol>
+
+
+<pre><code class="ruby">[branch "master"]
+ remote = origin
+ merge = refs/heads/master
+</code></pre>
+
+<pre><code>**为防止多台电脑编辑，每次编写前先要pull一下**
+</code></pre>
+
+<pre><code class="ruby">$ cd octopress
+$ git pull origin source  # update the local source branch
+$ cd ./_deploy
+$ git pull origin master  # update the local master branch
+</code></pre>
 ]]></content>
   </entry>
   
@@ -100,29 +129,29 @@
 </ol>
 
 
-<p><img class="top /images/2015-01-25/<a" src="href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x69;&#109;&#97;&#x67;&#101;&#49;&#64;&#x32;&#x78;&#x2e;&#x70;&#x6e;&#103;">&#x69;&#109;&#97;&#103;&#x65;&#x31;&#64;&#50;&#x78;&#x2e;&#x70;&#x6e;&#x67;</a>&#8221;></p>
+<p><img class="top /images/2015-01-25/<a" src="href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#58;&#x69;&#109;&#97;&#103;&#x65;&#x31;&#x40;&#50;&#x78;&#46;&#112;&#x6e;&#x67;">&#x69;&#x6d;&#97;&#x67;&#x65;&#x31;&#x40;&#50;&#x78;&#x2e;&#x70;&#110;&#x67;</a>&#8221;></p>
 
 <ol>
 <li>点击【Set NameServers】</li>
 </ol>
 
 
-<p><img class="top /images/2015-01-25/<a" src="href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#105;&#x6d;&#97;&#103;&#x65;&#x32;&#x40;&#x32;&#120;&#46;&#x70;&#x6e;&#103;">&#x69;&#x6d;&#x61;&#103;&#101;&#50;&#64;&#x32;&#x78;&#x2e;&#112;&#110;&#x67;</a>&#8221;></p>
+<p><img class="top /images/2015-01-25/<a" src="href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#58;&#x69;&#109;&#x61;&#103;&#x65;&#x32;&#x40;&#x32;&#120;&#46;&#x70;&#x6e;&#103;">&#x69;&#109;&#x61;&#103;&#x65;&#x32;&#x40;&#50;&#120;&#x2e;&#112;&#110;&#103;</a>&#8221;></p>
 
 <ol>
 <li>然后添加两个NAMESERVERS</li>
 </ol>
 
 
-<p><img class="top /images/2015-01-25/<a" src="href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x69;&#x6d;&#x61;&#103;&#101;&#51;&#64;&#50;&#x78;&#46;&#112;&#x6e;&#x67;">&#x69;&#x6d;&#x61;&#x67;&#x65;&#x33;&#64;&#x32;&#x78;&#x2e;&#112;&#x6e;&#103;</a>&#8221;></p>
+<p><img class="top /images/2015-01-25/<a" src="href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#105;&#109;&#x61;&#103;&#x65;&#51;&#64;&#50;&#x78;&#x2e;&#112;&#110;&#x67;">&#x69;&#109;&#97;&#x67;&#x65;&#51;&#x40;&#x32;&#120;&#x2e;&#x70;&#110;&#x67;</a>&#8221;></p>
 
 <p>首先在<a href="http://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9#wiki">根据gitcafe</a>上教程，在项目管理里添加域名，比如我添加了:</p>
 
-<p><img class="top /images/2015-01-25/<a" src="href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#x3a;&#x69;&#109;&#x61;&#103;&#x65;&#x35;&#x40;&#x32;&#x78;&#46;&#112;&#110;&#103;">&#105;&#109;&#x61;&#x67;&#101;&#53;&#64;&#x32;&#120;&#46;&#112;&#x6e;&#103;</a>&#8221;></p>
+<p><img class="top /images/2015-01-25/<a" src="href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#105;&#x6d;&#x61;&#x67;&#x65;&#x35;&#64;&#50;&#x78;&#x2e;&#x70;&#x6e;&#x67;">&#x69;&#109;&#x61;&#x67;&#x65;&#53;&#64;&#x32;&#x78;&#46;&#112;&#x6e;&#103;</a>&#8221;></p>
 
 <p>然后在<a href="http://www.dnspod.cn">DNSPOD</a>上注册一个账户，然后添加域名，并添加A记录或者设置CNAME</p>
 
-<p><img class="top /images/2015-01-25/<a" src="href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x69;&#x6d;&#x61;&#103;&#x65;&#52;&#x40;&#x32;&#x78;&#46;&#x70;&#x6e;&#103;">&#x69;&#109;&#97;&#x67;&#101;&#52;&#64;&#50;&#120;&#x2e;&#112;&#x6e;&#x67;</a>&#8221;></p>
+<p><img class="top /images/2015-01-25/<a" src="href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#105;&#x6d;&#x61;&#103;&#101;&#x34;&#x40;&#x32;&#120;&#46;&#112;&#x6e;&#103;">&#x69;&#x6d;&#97;&#x67;&#x65;&#x34;&#64;&#x32;&#x78;&#x2e;&#112;&#x6e;&#103;</a>&#8221;></p>
 
 <p>现在你就可以在浏览器中直接打开你的域名了, 可以通过
 <a href="http://xujiaqi.info">http://xujiaqi.info</a>，
