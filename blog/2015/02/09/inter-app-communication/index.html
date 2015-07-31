@@ -102,163 +102,318 @@
 
 <p>回到正题，在点击4999抢iPhone的链接后查看了一下他网页的源码:</p>
 
-<pre><code class="`javascript">
-    &lt;!DOCTYPE HTML&gt;
-    &lt;html&gt;
-    &lt;head&gt;
-        &lt;meta charset="UTF-8"&gt;
-        &lt;meta name="Description" content="手机购物，手机团购，进口，食品，饮料，母婴，超市，1号店 "/&gt;
-        &lt;meta name="Keywords" content="手机购物，手机团购，进口，食品，饮料，母婴，超市，1号店 "/&gt;
-        &lt;title&gt;促销活动,掌上一号店,掌上1号店,比超市更便宜，-1号店&lt;/title&gt;
-        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"&gt;
-        &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
-        &lt;meta name="apple-mobile-web-app-status-bar-style" content="black"&gt;
-        &lt;meta name="format-detection" content="telephone=no"&gt;
-        &lt;script type="text/javascript" src="http://image.yihaodianimg.com/mobile-website/js/tracker_top.js"&gt;&lt;/script&gt;
-    &lt;script&gt;var _hmt = _hmt || [];_hmt.push(['_setCustomVar', 4,  'yihaodian', 'yihaodian', 1]);&lt;/script&gt;&lt;/head&gt;
-    &lt;script&gt;
-        var tu="10305758297";
-        var sd="null";
-    &lt;/script&gt;
-    &lt;body &gt;
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="o">&lt;!</span><span class="no">DOCTYPE</span> <span class="no">HTML</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">meta</span> <span class="nb">name</span><span class="o">=</span><span class="s2">&quot;Description&quot;</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;手机购物，手机团购，进口，食品，饮料，母婴，超市，1号店 &quot;</span><span class="o">/&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="n">meta</span> <span class="nb">name</span><span class="o">=</span><span class="s2">&quot;Keywords&quot;</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;手机购物，手机团购，进口，食品，饮料，母婴，超市，1号店 &quot;</span><span class="o">/&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="err">促销活动</span><span class="p">,</span><span class="err">掌上一号店</span><span class="p">,</span><span class="err">掌上</span><span class="mi">1</span><span class="err">号店</span><span class="p">,</span><span class="err">比超市更便宜，</span><span class="o">-</span><span class="mi">1</span><span class="err">号店</span><span class="o">&lt;</span><span class="sr">/title&gt;</span>
+</span><span class='line'><span class="sr">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt;</span>
+</span><span class='line'><span class="sr">    &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;</span>
+</span><span class='line'><span class="sr">    &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;&gt;</span>
+</span><span class='line'><span class="sr">    &lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;</span>
+</span><span class='line'><span class="sr">    &lt;script type=&quot;text/</span><span class="n">javascript</span><span class="s2">&quot; src=&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//im</span><span class="n">age</span><span class="o">.</span><span class="n">yihaodianimg</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mobile</span><span class="o">-</span><span class="n">website</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">tracker_top</span><span class="o">.</span><span class="n">js</span><span class="s2">&quot;&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="s2">&lt;script&gt;var _hmt = _hmt || [];_hmt.push([&#39;_setCustomVar&#39;, 4,  &#39;yihaodian&#39;, &#39;yihaodian&#39;, 1]);&lt;/script&gt;&lt;/head&gt;</span>
+</span><span class='line'><span class="s2">&lt;script&gt;</span>
+</span><span class='line'><span class="s2">    var tu=&quot;</span><span class="mi">10305758297</span><span class="s2">&quot;;</span>
+</span><span class='line'><span class="s2">    var sd=&quot;</span><span class="n">null</span><span class="s2">&quot;;</span>
+</span><span class='line'><span class="s2">&lt;/script&gt;</span>
+</span><span class='line'><span class="s2">&lt;body &gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="s2">&lt;script type=&quot;</span><span class="n">text</span><span class="o">/</span><span class="n">javascript</span><span class="s2">&quot; src=&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//im</span><span class="n">age</span><span class="o">.</span><span class="n">yihaodianimg</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mobile</span><span class="o">-</span><span class="n">website</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">jq</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">7</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">js?v</span><span class="o">=</span><span class="mi">20140408</span><span class="s2">&quot;&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="s2">&lt;script type=&quot;</span><span class="n">text</span><span class="o">/</span><span class="n">javascript</span><span class="s2">&quot; src=&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//im</span><span class="n">age</span><span class="o">.</span><span class="n">yihaodianimg</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mobile</span><span class="o">-</span><span class="n">website</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">lazyload</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">js</span><span class="s2">&quot;&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="s2">&lt;script type=&quot;</span><span class="n">text</span><span class="o">/</span><span class="n">javascript</span><span class="s2">&quot; src=&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//im</span><span class="n">age</span><span class="o">.</span><span class="n">yihaodianimg</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mobile</span><span class="o">-</span><span class="n">website</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">cookie</span><span class="o">.</span><span class="n">js</span><span class="s2">&quot;&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="s2">&lt;script type=&quot;</span><span class="n">text</span><span class="o">/</span><span class="n">javascript</span><span class="s2">&quot; src=&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//im</span><span class="n">age</span><span class="o">.</span><span class="n">yihaodianimg</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mobile</span><span class="o">-</span><span class="n">website</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">tracker</span><span class="o">.</span><span class="n">js</span><span class="s2">&quot;&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="s2">&lt;script type=&quot;</span><span class="n">text</span><span class="o">/</span><span class="n">javascript</span><span class="s2">&quot; src=&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//im</span><span class="n">age</span><span class="o">.</span><span class="n">yihaodianimg</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mobile</span><span class="o">-</span><span class="n">website</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">tracker_hijack</span><span class="o">.</span><span class="n">js</span><span class="s2">&quot;&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="s2">&lt;script type=&quot;</span><span class="n">text</span><span class="o">/</span><span class="n">javascript</span><span class="s2">&quot;&gt;</span>
+</span><span class='line'><span class="s2">goapp(&#39;9&#39;);</span>
+</span><span class='line'><span class="s2">function goapp(type) {</span>
+</span><span class='line'><span class="s2">//1-cms;2-商品详情；3-团购；4-摇一摇；5-商品搜索；6-赠品；7-n元n件；8-满减;9-首页</span>
+</span><span class='line'><span class="s2"> if(type==1){</span>
+</span><span class='line'><span class="s2">     cms(&#39;0&#39;,&#39;0&#39;,&#39;false&#39;);</span>
+</span><span class='line'><span class="s2"> }else if(type==2){</span>
+</span><span class='line'><span class="s2">     prodetail(&#39;0&#39;,&#39;0&#39;,&#39;null&#39;,&#39;null&#39;);</span>
+</span><span class='line'><span class="s2"> }else if(type==3){</span>
+</span><span class='line'><span class="s2">     grpetail(&#39;0&#39;,&#39;0&#39;);</span>
+</span><span class='line'><span class="s2"> }else if(type==4){</span>
+</span><span class='line'><span class="s2">     rockhomepage();</span>
+</span><span class='line'><span class="s2"> }else if(type==5){</span>
+</span><span class='line'><span class="s2">     search(&#39;0&#39;);</span>
+</span><span class='line'><span class="s2"> }else if(type ==6){</span>
+</span><span class='line'><span class="s2">     promofree();</span>
+</span><span class='line'><span class="s2"> }else if(type ==7){</span>
+</span><span class='line'><span class="s2">   promonn(&#39;0&#39;,&#39;0&#39;);</span>
+</span><span class='line'><span class="s2"> }else if(type ==8){</span>
+</span><span class='line'><span class="s2">    promocutoff(&#39;0&#39;)</span>
+</span><span class='line'><span class="s2"> }else if(type ==9){</span>
+</span><span class='line'><span class="s2">    goindex();</span>
+</span><span class='line'><span class="s2"> }</span>
+</span><span class='line'>
+</span><span class='line'><span class="s2">}</span>
+</span><span class='line'><span class="s2">//cms活动页</span>
+</span><span class='line'><span class="s2">function cms(cmsid,provinceId,idexistflag) {</span>
+</span><span class='line'><span class="s2">    </span>
+</span><span class='line'><span class="s2">    urlGo(&quot;</span><span class="ss">yhd</span><span class="p">:</span><span class="sr">//</span><span class="n">cms</span><span class="o">/</span><span class="s2">&quot;+cmsid+&quot;</span><span class="n">_</span><span class="s2">&quot;+provinceId);</span>
+</span><span class='line'><span class="s2">    </span>
+</span><span class='line'><span class="s2">    var url;</span>
+</span><span class='line'><span class="s2">    if(idexistflag==&#39;true&#39;){</span>
+</span><span class='line'><span class="s2">      url =&quot;</span><span class="n">urlGo</span><span class="p">(</span><span class="s1">&#39;http://m.yhd.com/mw/cms/&quot;+cmsid+&quot;/20/&quot;+provinceId+&quot;&#39;</span><span class="p">)</span><span class="s2">&quot;;</span>
+</span><span class='line'><span class="s2">      //url =&quot;</span><span class="n">urlGo</span><span class="p">(</span><span class="s1">&#39;http://m.yhd.com/mw/newcms/&quot;+cmsid+&quot;?provinceId=&quot;+provinceId+&quot;&#39;</span><span class="p">)</span><span class="s2">&quot;;</span>
+</span><span class='line'><span class="s2">    }else{</span>
+</span><span class='line'><span class="s2">     url =&#39;urlGo(&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//m</span><span class="o">.</span><span class="n">yhd</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mw</span><span class="o">/</span><span class="n">d</span><span class="s2">&quot;)&#39;;</span>
+</span><span class='line'><span class="s2">    }</span>
+</span><span class='line'><span class="s2">     setTimeout(url,3000);</span>
+</span><span class='line'><span class="s2">}</span>
+</span><span class='line'><span class="s2">//商品详情</span>
+</span><span class='line'><span class="s2">function prodetail(proid,provinceId,promotionid,pmid) {</span>
+</span><span class='line'><span class="s2">    var promotionidwebsite = promotionid;</span>
+</span><span class='line'><span class="s2">    if(promotionidwebsite ==null || promotionidwebsite==&#39;null&#39;){</span>
+</span><span class='line'><span class="s2">      promotionidwebsite =&quot;&quot;;</span>
+</span><span class='line'><span class="s2">    }</span>
+</span><span class='line'><span class="s2">    </span>
+</span><span class='line'><span class="s2">    if(promotionid ==null || promotionid==&#39;null&#39;){</span>
+</span><span class='line'><span class="s2">      promotionid =&quot;&quot;;</span>
+</span><span class='line'><span class="s2">    }else{</span>
+</span><span class='line'><span class="s2">      promotionid=&quot;</span><span class="n">_</span><span class="s2">&quot;+promotionid</span>
+</span><span class='line'><span class="s2">    }</span>
+</span><span class='line'><span class="s2">    if(pmid ==null || pmid==&#39;null&#39;){</span>
+</span><span class='line'><span class="s2">     pmid=&quot;</span><span class="n">_0</span><span class="s2">&quot;;</span>
+</span><span class='line'><span class="s2">    }else{</span>
+</span><span class='line'><span class="s2">     pmid=&quot;</span><span class="n">_</span><span class="s2">&quot;+pmid;</span>
+</span><span class='line'><span class="s2">    }</span>
+</span><span class='line'><span class="s2">    var url=&quot;&quot;;</span>
+</span><span class='line'><span class="s2">    if(tu &amp;&amp; sd){</span>
+</span><span class='line'><span class="s2">     url=&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//m</span><span class="o">.</span><span class="n">yhd</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mw</span><span class="o">/</span><span class="n">productsquid</span><span class="o">/</span><span class="s2">&quot;+proid+&quot;</span><span class="o">/</span><span class="s2">&quot;+provinceId+&quot;</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="s2">&quot;+promotionidwebsite+&quot;</span><span class="p">?</span><span class="n">tracker_u</span><span class="o">=</span><span class="s2">&quot;+tu+&quot;</span><span class="o">&amp;</span><span class="n">source_id</span><span class="o">=</span><span class="s2">&quot;+sd;</span>
+</span><span class='line'><span class="s2">    }else{</span>
+</span><span class='line'><span class="s2">     url=&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//m</span><span class="o">.</span><span class="n">yhd</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mw</span><span class="o">/</span><span class="n">productsquid</span><span class="o">/</span><span class="s2">&quot;+proid+&quot;</span><span class="o">/</span><span class="s2">&quot;+provinceId+&quot;</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="s2">&quot;+promotionidwebsite;</span>
+</span><span class='line'><span class="s2">    }</span>
+</span><span class='line'><span class="s2">    // var url =&quot;</span><span class="n">urlGo</span><span class="p">()</span><span class="s2">&quot;;</span>
+</span><span class='line'><span class="s2">      </span>
+</span><span class='line'><span class="s2">        urlGo(&quot;</span><span class="ss">yhd</span><span class="p">:</span><span class="sr">//</span><span class="n">product</span><span class="o">/</span><span class="s2">&quot;+proid+&quot;</span><span class="n">_</span><span class="s2">&quot;+provinceId+promotionid+pmid);</span>
+</span><span class='line'><span class="s2">       </span>
+</span><span class='line'><span class="s2">    setTimeout(function(){</span>
+</span><span class='line'><span class="s2">     urlGo(url);</span>
+</span><span class='line'><span class="s2">    },3000);</span>
+</span><span class='line'><span class="s2">}</span>
+</span><span class='line'><span class="s2">//团购</span>
+</span><span class='line'><span class="s2">function grpetail(grpid,provinceId) {</span>
+</span><span class='line'><span class="s2">     </span>
+</span><span class='line'><span class="s2">       urlGo(&quot;</span><span class="ss">yhd</span><span class="p">:</span><span class="sr">//</span><span class="n">groupon</span><span class="o">/</span><span class="s2">&quot;+grpid+&quot;</span><span class="n">_</span><span class="s2">&quot;+provinceId);</span>
+</span><span class='line'><span class="s2">     </span>
+</span><span class='line'><span class="s2">    var url =&quot;</span><span class="n">urlGo</span><span class="p">(</span><span class="s1">&#39;http://m.yhd.com/mw/groupdetail/&quot;+grpid+&quot;/&quot;+provinceId+&quot;&#39;</span><span class="p">)</span><span class="s2">&quot;;</span>
+</span><span class='line'><span class="s2">    setTimeout(url,3000);</span>
+</span><span class='line'><span class="s2">}</span>
+</span><span class='line'><span class="s2">//摇一摇</span>
+</span><span class='line'><span class="s2">function rockhomepage() {</span>
+</span><span class='line'><span class="s2"> </span>
+</span><span class='line'><span class="s2">    urlGo(&quot;</span><span class="ss">yhd</span><span class="p">:</span><span class="sr">//</span><span class="n">rockhomepage</span><span class="o">/</span><span class="s2">&quot;);</span>
+</span><span class='line'><span class="s2">  </span>
+</span><span class='line'><span class="s2">    setTimeout(&#39;urlGo(&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//m</span><span class="o">.</span><span class="n">yhd</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mw</span><span class="o">/</span><span class="n">d</span><span class="s2">&quot;)&#39;,3000);</span>
+</span><span class='line'><span class="s2">}</span>
+</span><span class='line'><span class="s2">//商品搜索</span>
+</span><span class='line'><span class="s2">function search(keyword) {</span>
+</span><span class='line'><span class="s2">     </span>
+</span><span class='line'><span class="s2">    urlGo(&quot;</span><span class="ss">yhd</span><span class="p">:</span><span class="sr">//se</span><span class="n">arch</span><span class="o">/</span><span class="s2">&quot;+keyword+&quot;</span><span class="n">_1_1</span><span class="s2">&quot;);</span>
+</span><span class='line'><span class="s2">    </span>
+</span><span class='line'><span class="s2">    var url =&quot;</span><span class="n">urlGo</span><span class="p">(</span><span class="s1">&#39;http://m.yhd.com/mw/search?keyword=&quot;+keyword+&quot;&amp;searchid=1&amp;serchtype=&#39;</span><span class="p">)</span><span class="s2">&quot;;</span>
+</span><span class='line'><span class="s2">    setTimeout(url,3000);</span>
+</span><span class='line'><span class="s2">}</span>
+</span><span class='line'><span class="s2">//赠品促销</span>
+</span><span class='line'><span class="s2">function promofree() {</span>
+</span><span class='line'><span class="s2">    </span>
+</span><span class='line'><span class="s2">    urlGo(&quot;</span><span class="ss">yhd</span><span class="p">:</span><span class="sr">//</span><span class="n">promofree</span><span class="o">/</span><span class="mi">1_1</span><span class="s2">&quot;);</span>
+</span><span class='line'><span class="s2">    </span>
+</span><span class='line'><span class="s2">    setTimeout(&#39;urlGo(&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//m</span><span class="o">.</span><span class="n">yhd</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mw</span><span class="o">/</span><span class="n">d</span><span class="s2">&quot;)&#39;,3000);</span>
+</span><span class='line'><span class="s2">}</span>
+</span><span class='line'><span class="s2">//n元n件促销</span>
+</span><span class='line'><span class="s2">function promonn(promotionid,levelid) {</span>
+</span><span class='line'><span class="s2">     </span>
+</span><span class='line'><span class="s2">    urlGo(&quot;</span><span class="ss">yhd</span><span class="p">:</span><span class="sr">//</span><span class="n">promonn</span><span class="o">/</span><span class="s2">&quot;+promotionid+&quot;</span><span class="n">_</span><span class="s2">&quot;+levelid);</span>
+</span><span class='line'><span class="s2">     </span>
+</span><span class='line'><span class="s2">    setTimeout(&#39;urlGo(&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//m</span><span class="o">.</span><span class="n">yhd</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mw</span><span class="o">/</span><span class="n">d</span><span class="s2">&quot;)&#39;,3000);</span>
+</span><span class='line'><span class="s2">}</span>
+</span><span class='line'><span class="s2">//满减列表促销</span>
+</span><span class='line'><span class="s2">function promocutoff(promotionid) {</span>
+</span><span class='line'><span class="s2">    </span>
+</span><span class='line'><span class="s2">    urlGo(&quot;</span><span class="ss">yhd</span><span class="p">:</span><span class="sr">//</span><span class="n">promocutoff</span><span class="o">/</span><span class="s2">&quot;+promotionid);</span>
+</span><span class='line'><span class="s2">    </span>
+</span><span class='line'><span class="s2">    setTimeout(&#39;urlGo(&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//m</span><span class="o">.</span><span class="n">yhd</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mw</span><span class="o">/</span><span class="n">d</span><span class="s2">&quot;)&#39;,3000);</span>
+</span><span class='line'><span class="s2">}</span>
+</span><span class='line'><span class="s2">//首页</span>
+</span><span class='line'><span class="s2">function goindex() {</span>
+</span><span class='line'><span class="s2"> </span>
+</span><span class='line'><span class="s2">      urlGo(&quot;</span><span class="ss">yhd</span><span class="p">:</span><span class="sr">//</span><span class="n">home</span><span class="o">/</span><span class="s2">&quot;);</span>
+</span><span class='line'><span class="s2"> </span>
+</span><span class='line'><span class="s2">    setTimeout(&#39;urlGo(&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//m</span><span class="o">.</span><span class="n">yhd</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mw</span><span class="o">/</span><span class="n">d</span><span class="s2">&quot;)&#39;,3000);</span>
+</span><span class='line'><span class="s2">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="s2">function urlGo(url){</span>
+</span><span class='line'><span class="s2">    setTimeout(function(){</span>
+</span><span class='line'><span class="s2">        window.location = url;</span>
+</span><span class='line'><span class="s2">    },10);</span>
+</span><span class='line'><span class="s2">} </span>
+</span><span class='line'><span class="s2">&lt;/script&gt;</span>
+</span><span class='line'><span class="s2">&lt;/body&gt;</span>
+</span><span class='line'><span class="s2">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
-
-    &lt;script type="text/javascript" src="http://image.yihaodianimg.com/mobile-website/js/jq.1.7.min.js?v=20140408"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="http://image.yihaodianimg.com/mobile-website/js/jquery.lazyload.min.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="http://image.yihaodianimg.com/mobile-website/js/jquery.cookie.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="http://image.yihaodianimg.com/mobile-website/js/tracker.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="http://image.yihaodianimg.com/mobile-website/js/tracker_hijack.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript"&gt;
-    goapp('9');
-    function goapp(type) {
-    //1-cms;2-商品详情；3-团购；4-摇一摇；5-商品搜索；6-赠品；7-n元n件；8-满减;9-首页
-     if(type==1){
-         cms('0','0','false');
-     }else if(type==2){
-         prodetail('0','0','null','null');
-     }else if(type==3){
-         grpetail('0','0');
-     }else if(type==4){
-         rockhomepage();
-     }else if(type==5){
-         search('0');
-     }else if(type ==6){
-         promofree();
-     }else if(type ==7){
-       promonn('0','0');
-     }else if(type ==8){
-        promocutoff('0')
-     }else if(type ==9){
-        goindex();
-     }
-
-    }
-    //cms活动页
-    function cms(cmsid,provinceId,idexistflag) {
-
-        urlGo("yhd://cms/"+cmsid+"_"+provinceId);
-
-        var url;
-        if(idexistflag=='true'){
-          url ="urlGo('http://m.yhd.com/mw/cms/"+cmsid+"/20/"+provinceId+"')";
-          //url ="urlGo('http://m.yhd.com/mw/newcms/"+cmsid+"?provinceId="+provinceId+"')";
-        }else{
-         url ='urlGo("http://m.yhd.com/mw/d")';
-        }
-         setTimeout(url,3000);
-    }
-    //商品详情
-    function prodetail(proid,provinceId,promotionid,pmid) {
-        var promotionidwebsite = promotionid;
-        if(promotionidwebsite ==null || promotionidwebsite=='null'){
-          promotionidwebsite ="";
-        }
-
-        if(promotionid ==null || promotionid=='null'){
-          promotionid ="";
-        }else{
-          promotionid="_"+promotionid
-        }
-        if(pmid ==null || pmid=='null'){
-            pmid="_0";
-        }else{
-            pmid="_"+pmid;
-        }
-        var url="";
-        if(tu &amp;&amp; sd){
-            url="http://m.yhd.com/mw/productsquid/"+proid+"/"+provinceId+"/20/"+promotionidwebsite+"?tracker_u="+tu+"&amp;source_id="+sd;
-        }else{
-            url="http://m.yhd.com/mw/productsquid/"+proid+"/"+provinceId+"/20/"+promotionidwebsite;
-        }
-        // var url ="urlGo()";
-
-            urlGo("yhd://product/"+proid+"_"+provinceId+promotionid+pmid);
-
-        setTimeout(function(){
-            urlGo(url);
-        },3000);
-    }
-    //团购
-    function grpetail(grpid,provinceId) {
-
-           urlGo("yhd://groupon/"+grpid+"_"+provinceId);
-
-        var url ="urlGo('http://m.yhd.com/mw/groupdetail/"+grpid+"/"+provinceId+"')";
-        setTimeout(url,3000);
-    }
-    //摇一摇
-    function rockhomepage() {
-
-        urlGo("yhd://rockhomepage/");
-
-        setTimeout('urlGo("http://m.yhd.com/mw/d")',3000);
-    }
-    //商品搜索
-    function search(keyword) {
-
-        urlGo("yhd://search/"+keyword+"_1_1");
-
-        var url ="urlGo('http://m.yhd.com/mw/search?keyword="+keyword+"&amp;searchid=1&amp;serchtype=')";
-        setTimeout(url,3000);
-    }
-    //赠品促销
-    function promofree() {
-
-        urlGo("yhd://promofree/1_1");
-
-        setTimeout('urlGo("http://m.yhd.com/mw/d")',3000);
-    }
-    //n元n件促销
-    function promonn(promotionid,levelid) {
-
-        urlGo("yhd://promonn/"+promotionid+"_"+levelid);
-
-        setTimeout('urlGo("http://m.yhd.com/mw/d")',3000);
-    }
-    //满减列表促销
-    function promocutoff(promotionid) {
-
-        urlGo("yhd://promocutoff/"+promotionid);
-
-        setTimeout('urlGo("http://m.yhd.com/mw/d")',3000);
-    }
-    //首页
-    function goindex() {
-
-          urlGo("yhd://home/");
-
-        setTimeout('urlGo("http://m.yhd.com/mw/d")',3000);
-    }
-
-    function urlGo(url){
-        setTimeout(function(){
-            window.location = url;
-        },10);
-    } 
-    &lt;/script&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
-</code></pre>
 
 <p> 一号店的工程师还挺负责的，都写上了注释。原来他是用 <a href="yhd://">yhd://</a>这个协议唤醒了app，通过搜索引擎一番搜索才知道，原来这个就是通过URL scheme来打开的，相信做过app分享的都不陌生，通过设置程序的URL scheme来打开微信、微博等社交软件，但是之前不知道这个scheme还可以通过网页来唤醒app。看到苹果官方文档，原来这个就是应用间通讯(Inter-App Communication)。通过在appdelegate中可以对链接进行判断跳转，官方示例：</p>
 
@@ -312,55 +467,55 @@
 <span class='line-number'>48</span>
 <span class='line-number'>49</span>
 <span class='line-number'>50</span>
-</pre></td><td class='code'><pre><code class='C'><span class='line'><span class="o">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nl">application</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="n">application</span> <span class="nl">openURL</span><span class="p">:(</span><span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="n">url</span>
-</span><span class='line'>        <span class="nl">sourceApplication</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">sourceApplication</span> <span class="nl">annotation</span><span class="p">:(</span><span class="n">id</span><span class="p">)</span><span class="n">annotation</span> <span class="p">{</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">-</span> <span class="p">(</span><span class="no">BOOL</span><span class="p">)</span><span class="ss">application</span><span class="p">:(</span><span class="no">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="n">application</span> <span class="ss">openURL</span><span class="p">:(</span><span class="no">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="n">url</span>
+</span><span class='line'>        <span class="ss">sourceApplication</span><span class="p">:(</span><span class="no">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">sourceApplication</span> <span class="ss">annotation</span><span class="p">:(</span><span class="nb">id</span><span class="p">)</span><span class="n">annotation</span> <span class="p">{</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="k">if</span> <span class="p">([[</span><span class="n">url</span> <span class="n">scheme</span><span class="p">]</span> <span class="nl">isEqualToString</span><span class="p">:</span><span class="err">@</span><span class="s">&quot;todolist&quot;</span><span class="p">])</span> <span class="p">{</span>
-</span><span class='line'>        <span class="n">ToDoItem</span> <span class="o">*</span><span class="n">item</span> <span class="o">=</span> <span class="p">[[</span><span class="n">ToDoItem</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-</span><span class='line'>        <span class="n">NSString</span> <span class="o">*</span><span class="n">taskName</span> <span class="o">=</span> <span class="p">[</span><span class="n">url</span> <span class="n">query</span><span class="p">];</span>
-</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">taskName</span> <span class="o">||</span> <span class="o">!</span><span class="p">[</span><span class="n">self</span> <span class="nl">isValidTaskString</span><span class="p">:</span><span class="n">taskName</span><span class="p">])</span> <span class="p">{</span> <span class="c1">// must have a task name</span>
-</span><span class='line'>            <span class="k">return</span> <span class="n">NO</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="o">[[</span><span class="n">url</span> <span class="n">scheme</span><span class="o">]</span> <span class="ss">isEqualToString</span><span class="p">:</span><span class="err">@</span><span class="s2">&quot;todolist&quot;</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="no">ToDoItem</span> <span class="o">*</span><span class="n">item</span> <span class="o">=</span> <span class="o">[[</span><span class="no">ToDoItem</span> <span class="n">alloc</span><span class="o">]</span> <span class="n">init</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>        <span class="no">NSString</span> <span class="o">*</span><span class="n">taskName</span> <span class="o">=</span> <span class="o">[</span><span class="n">url</span> <span class="n">query</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">taskName</span> <span class="o">||</span> <span class="o">![</span><span class="nb">self</span> <span class="ss">isValidTaskString</span><span class="p">:</span><span class="n">taskName</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span> <span class="sr">//</span> <span class="n">must</span> <span class="n">have</span> <span class="n">a</span> <span class="n">task</span> <span class="nb">name</span>
+</span><span class='line'>            <span class="k">return</span> <span class="no">NO</span><span class="p">;</span>
 </span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>        <span class="n">taskName</span> <span class="o">=</span> <span class="p">[</span><span class="n">taskName</span> <span class="nl">stringByReplacingPercentEscapesUsingEncoding</span><span class="p">:</span><span class="n">NSUTF8StringEncoding</span><span class="p">];</span>
+</span><span class='line'>        <span class="n">taskName</span> <span class="o">=</span> <span class="o">[</span><span class="n">taskName</span> <span class="ss">stringByReplacingPercentEscapesUsingEncoding</span><span class="p">:</span><span class="no">NSUTF8StringEncoding</span><span class="o">]</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'>        <span class="n">item</span><span class="p">.</span><span class="n">toDoTask</span> <span class="o">=</span> <span class="n">taskName</span><span class="p">;</span>
-</span><span class='line'>        <span class="n">NSString</span> <span class="o">*</span><span class="n">dateString</span> <span class="o">=</span> <span class="p">[</span><span class="n">url</span> <span class="n">fragment</span><span class="p">];</span>
-</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">dateString</span> <span class="o">||</span> <span class="p">[</span><span class="n">dateString</span> <span class="nl">isEqualToString</span><span class="p">:</span><span class="err">@</span><span class="s">&quot;today&quot;</span><span class="p">])</span> <span class="p">{</span>
-</span><span class='line'>            <span class="n">item</span><span class="p">.</span><span class="n">dateDue</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
+</span><span class='line'>        <span class="n">item</span><span class="o">.</span><span class="n">toDoTask</span> <span class="o">=</span> <span class="n">taskName</span><span class="p">;</span>
+</span><span class='line'>        <span class="no">NSString</span> <span class="o">*</span><span class="n">dateString</span> <span class="o">=</span> <span class="o">[</span><span class="n">url</span> <span class="n">fragment</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">dateString</span> <span class="o">||</span> <span class="o">[</span><span class="n">dateString</span> <span class="ss">isEqualToString</span><span class="p">:</span><span class="err">@</span><span class="s2">&quot;today&quot;</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">item</span><span class="o">.</span><span class="n">dateDue</span> <span class="o">=</span> <span class="o">[</span><span class="no">NSDate</span> <span class="n">date</span><span class="o">]</span><span class="p">;</span>
 </span><span class='line'>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">[</span><span class="n">self</span> <span class="nl">isValidDateString</span><span class="p">:</span><span class="n">dateString</span><span class="p">])</span> <span class="p">{</span>
-</span><span class='line'>                <span class="k">return</span> <span class="n">NO</span><span class="p">;</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="o">![</span><span class="nb">self</span> <span class="ss">isValidDateString</span><span class="p">:</span><span class="n">dateString</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>                <span class="k">return</span> <span class="no">NO</span><span class="p">;</span>
 </span><span class='line'>            <span class="p">}</span>
-</span><span class='line'>            <span class="c1">// format: yyyymmddhhmm (24-hour clock)</span>
-</span><span class='line'>            <span class="n">NSString</span> <span class="o">*</span><span class="n">curStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">dateString</span> <span class="nl">substringWithRange</span><span class="p">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)];</span>
-</span><span class='line'>            <span class="n">NSInteger</span> <span class="n">yeardigit</span> <span class="o">=</span> <span class="p">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="p">];</span>
-</span><span class='line'>            <span class="n">curStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">dateString</span> <span class="nl">substringWithRange</span><span class="p">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)];</span>
-</span><span class='line'>            <span class="n">NSInteger</span> <span class="n">monthdigit</span> <span class="o">=</span> <span class="p">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="p">];</span>
-</span><span class='line'>            <span class="n">curStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">dateString</span> <span class="nl">substringWithRange</span><span class="p">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)];</span>
-</span><span class='line'>            <span class="n">NSInteger</span> <span class="n">daydigit</span> <span class="o">=</span> <span class="p">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="p">];</span>
-</span><span class='line'>            <span class="n">curStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">dateString</span> <span class="nl">substringWithRange</span><span class="p">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">)];</span>
-</span><span class='line'>            <span class="n">NSInteger</span> <span class="n">hourdigit</span> <span class="o">=</span> <span class="p">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="p">];</span>
-</span><span class='line'>            <span class="n">curStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">dateString</span> <span class="nl">substringWithRange</span><span class="p">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)];</span>
-</span><span class='line'>            <span class="n">NSInteger</span> <span class="n">minutedigit</span> <span class="o">=</span> <span class="p">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="p">];</span>
+</span><span class='line'>            <span class="sr">//</span> <span class="nb">format</span><span class="p">:</span> <span class="n">yyyymmddhhmm</span> <span class="p">(</span><span class="mi">24</span><span class="o">-</span><span class="n">hour</span> <span class="n">clock</span><span class="p">)</span>
+</span><span class='line'>            <span class="no">NSString</span> <span class="o">*</span><span class="n">curStr</span> <span class="o">=</span> <span class="o">[</span><span class="n">dateString</span> <span class="ss">substringWithRange</span><span class="p">:</span><span class="no">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="no">NSInteger</span> <span class="n">yeardigit</span> <span class="o">=</span> <span class="o">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="n">curStr</span> <span class="o">=</span> <span class="o">[</span><span class="n">dateString</span> <span class="ss">substringWithRange</span><span class="p">:</span><span class="no">NSMakeRange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="no">NSInteger</span> <span class="n">monthdigit</span> <span class="o">=</span> <span class="o">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="n">curStr</span> <span class="o">=</span> <span class="o">[</span><span class="n">dateString</span> <span class="ss">substringWithRange</span><span class="p">:</span><span class="no">NSMakeRange</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="no">NSInteger</span> <span class="n">daydigit</span> <span class="o">=</span> <span class="o">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="n">curStr</span> <span class="o">=</span> <span class="o">[</span><span class="n">dateString</span> <span class="ss">substringWithRange</span><span class="p">:</span><span class="no">NSMakeRange</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="no">NSInteger</span> <span class="n">hourdigit</span> <span class="o">=</span> <span class="o">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="n">curStr</span> <span class="o">=</span> <span class="o">[</span><span class="n">dateString</span> <span class="ss">substringWithRange</span><span class="p">:</span><span class="no">NSMakeRange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="no">NSInteger</span> <span class="n">minutedigit</span> <span class="o">=</span> <span class="o">[</span><span class="n">curStr</span> <span class="n">integerValue</span><span class="o">]</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'>            <span class="n">NSDateComponents</span> <span class="o">*</span><span class="n">dateComps</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSDateComponents</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-</span><span class='line'>            <span class="p">[</span><span class="n">dateComps</span> <span class="nl">setYear</span><span class="p">:</span><span class="n">yeardigit</span><span class="p">];</span>
-</span><span class='line'>            <span class="p">[</span><span class="n">dateComps</span> <span class="nl">setMonth</span><span class="p">:</span><span class="n">monthdigit</span><span class="p">];</span>
-</span><span class='line'>            <span class="p">[</span><span class="n">dateComps</span> <span class="nl">setDay</span><span class="p">:</span><span class="n">daydigit</span><span class="p">];</span>
-</span><span class='line'>            <span class="p">[</span><span class="n">dateComps</span> <span class="nl">setHour</span><span class="p">:</span><span class="n">hourdigit</span><span class="p">];</span>
-</span><span class='line'>            <span class="p">[</span><span class="n">dateComps</span> <span class="nl">setMinute</span><span class="p">:</span><span class="n">minutedigit</span><span class="p">];</span>
-</span><span class='line'>            <span class="n">NSCalendar</span> <span class="o">*</span><span class="n">calendar</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">NSCalendar</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithCalendarIdentifier</span><span class="p">:</span><span class="n">NSGregorianCalendar</span><span class="p">];</span>
-</span><span class='line'>            <span class="n">NSDate</span> <span class="o">*</span><span class="n">itemDate</span> <span class="o">=</span> <span class="p">[</span><span class="n">calendar</span> <span class="nl">dateFromComponents</span><span class="p">:</span><span class="n">dateComps</span><span class="p">];</span>
+</span><span class='line'>            <span class="no">NSDateComponents</span> <span class="o">*</span><span class="n">dateComps</span> <span class="o">=</span> <span class="o">[[</span><span class="no">NSDateComponents</span> <span class="n">alloc</span><span class="o">]</span> <span class="n">init</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="o">[</span><span class="n">dateComps</span> <span class="ss">setYear</span><span class="p">:</span><span class="n">yeardigit</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="o">[</span><span class="n">dateComps</span> <span class="ss">setMonth</span><span class="p">:</span><span class="n">monthdigit</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="o">[</span><span class="n">dateComps</span> <span class="ss">setDay</span><span class="p">:</span><span class="n">daydigit</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="o">[</span><span class="n">dateComps</span> <span class="ss">setHour</span><span class="p">:</span><span class="n">hourdigit</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="o">[</span><span class="n">dateComps</span> <span class="ss">setMinute</span><span class="p">:</span><span class="n">minutedigit</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="no">NSCalendar</span> <span class="o">*</span><span class="n">calendar</span> <span class="o">=</span> <span class="o">[</span><span class="n">s</span><span class="o">[</span><span class="no">NSCalendar</span> <span class="n">alloc</span><span class="o">]</span> <span class="ss">initWithCalendarIdentifier</span><span class="p">:</span><span class="no">NSGregorianCalendar</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>            <span class="no">NSDate</span> <span class="o">*</span><span class="n">itemDate</span> <span class="o">=</span> <span class="o">[</span><span class="n">calendar</span> <span class="ss">dateFromComponents</span><span class="p">:</span><span class="n">dateComps</span><span class="o">]</span><span class="p">;</span>
 </span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">itemDate</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>                <span class="k">return</span> <span class="n">NO</span><span class="p">;</span>
+</span><span class='line'>                <span class="k">return</span> <span class="no">NO</span><span class="p">;</span>
 </span><span class='line'>            <span class="p">}</span>
-</span><span class='line'>            <span class="n">item</span><span class="p">.</span><span class="n">dateDue</span> <span class="o">=</span> <span class="n">itemDate</span><span class="p">;</span>
+</span><span class='line'>            <span class="n">item</span><span class="o">.</span><span class="n">dateDue</span> <span class="o">=</span> <span class="n">itemDate</span><span class="p">;</span>
 </span><span class='line'>        <span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>        <span class="p">[(</span><span class="n">NSMutableArray</span> <span class="o">*</span><span class="p">)</span><span class="n">self</span><span class="p">.</span><span class="n">list</span> <span class="nl">addObject</span><span class="p">:</span><span class="n">item</span><span class="p">];</span>
-</span><span class='line'>        <span class="k">return</span> <span class="n">YES</span><span class="p">;</span>
+</span><span class='line'>        <span class="o">[</span><span class="p">(</span><span class="no">NSMutableArray</span> <span class="o">*</span><span class="p">)</span><span class="nb">self</span><span class="o">.</span><span class="n">list</span> <span class="ss">addObject</span><span class="p">:</span><span class="n">item</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">return</span> <span class="no">YES</span><span class="p">;</span>
 </span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">NO</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">return</span> <span class="no">NO</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
