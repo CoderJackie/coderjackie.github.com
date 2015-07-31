@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ios | 徐佳琦的个人博客]]></title>
   <link href="http://coderjackie.github.io/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://coderjackie.github.io/"/>
-  <updated>2015-07-31T15:58:51+08:00</updated>
+  <updated>2015-07-31T16:02:07+08:00</updated>
   <id>http://coderjackie.github.io/</id>
   <author>
     <name><![CDATA[徐佳琦]]></name>
@@ -30,9 +30,13 @@
  #endif
 </code></pre>
 
+<hr />
+
 <p><img class="top" src="/images/2015-07-27-2/image1.png"></p>
 
 <p><img class="top" src="/images/2015-07-27-2/image2.png"></p>
+
+<hr />
 ]]></content>
   </entry>
   
@@ -67,20 +71,20 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[xcode删除多余证书文件]]></title>
+    <title type="html"><![CDATA[删除Xcode多余描述文件]]></title>
     <link href="http://coderjackie.github.io/blog/2015/07/13/xcodeshan-chu-duo-yu-zheng-shu-wen-jian/"/>
     <updated>2015-07-13T16:37:54+08:00</updated>
     <id>http://coderjackie.github.io/blog/2015/07/13/xcodeshan-chu-duo-yu-zheng-shu-wen-jian</id>
     <content type="html"><![CDATA[<p>删除xcode多余的证书描述文件：</p>
 
-<p><img class="top /images/2015-07-13/<a" src="href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#x51;&#81;&#50;&#48;&#x31;&#x35;&#x30;&#55;&#x31;&#51;&#45;&#x31;&#x40;&#50;&#120;&#46;&#x70;&#x6e;&#103;">&#81;&#81;&#50;&#48;&#x31;&#53;&#x30;&#55;&#49;&#51;&#45;&#49;&#x40;&#50;&#120;&#46;&#112;&#x6e;&#x67;</a>&#8221;></p>
+<p><img class="top /images/2015-07-13/<a" src="href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#81;&#x51;&#50;&#x30;&#49;&#53;&#48;&#x37;&#49;&#51;&#45;&#49;&#x40;&#x32;&#120;&#46;&#112;&#110;&#x67;">&#81;&#x51;&#50;&#48;&#49;&#x35;&#x30;&#55;&#49;&#x33;&#x2d;&#x31;&#x40;&#50;&#120;&#x2e;&#112;&#110;&#x67;</a>&#8221;></p>
 
 <p>找到目录：</p>
 
-<pre><code>~/Library/MobileDevice/Provisioning Profiles
+<pre><code class="ruby">~/Library/MobileDevice/Provisioning Profiles
 </code></pre>
 
-<p>找到对应描述文件名删除，重启xcode即可。</p>
+<p>找到对应描述文件名删除，重启Xcode即可。</p>
 ]]></content>
   </entry>
   
