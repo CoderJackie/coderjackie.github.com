@@ -4,7 +4,7 @@
   <title><![CDATA[徐佳琦的个人博客]]></title>
   <link href="http://coderjackie.github.io/atom.xml" rel="self"/>
   <link href="http://coderjackie.github.io/"/>
-  <updated>2015-07-31T15:48:58+08:00</updated>
+  <updated>2015-07-31T15:51:58+08:00</updated>
   <id>http://coderjackie.github.io/</id>
   <author>
     <name><![CDATA[徐佳琦]]></name>
@@ -22,14 +22,14 @@
 
 <p>那么可以通过这个方法禁止掉，并且报错提示给别人：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#ifndef DOXYGEN_SHOULD_SKIP_THIS
-</span><span class='line'>// Disallow init and don't add to documentation
-</span><span class='line'>- (id)init __attribute__((unavailable("init is not a supported initializer for this class.")));
-</span><span class='line'>#endif
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#ifndef DOXYGEN_SHOULD_SKIP_THIS</span>
+</span><span class='line'><span class="sr">//</span> <span class="no">Disallow</span> <span class="n">init</span> <span class="ow">and</span> <span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">add</span> <span class="n">to</span> <span class="n">documentation</span>
+</span><span class='line'>   <span class="o">-</span> <span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="n">init</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">unavailable</span><span class="p">(</span><span class="s2">&quot;init is not a supported initializer for this class.&quot;</span><span class="p">)));</span>
+</span><span class='line'><span class="c1">#endif</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -65,7 +65,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>然后要在点击按钮的时候将tintColor置空，因为默认UIView的appearance是为nil的：</p>
+<p>然后要在点击按钮的时候将tintColor置空，因为默认UIView appearance的tintColor是为nil的：</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
