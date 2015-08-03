@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ios | 徐佳琦的个人博客]]></title>
   <link href="http://coderjackie.github.io/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://coderjackie.github.io/"/>
-  <updated>2015-07-31T16:02:07+08:00</updated>
+  <updated>2015-08-03T11:30:31+08:00</updated>
   <id>http://coderjackie.github.io/</id>
   <author>
     <name><![CDATA[徐佳琦]]></name>
@@ -77,7 +77,7 @@
     <id>http://coderjackie.github.io/blog/2015/07/13/xcodeshan-chu-duo-yu-zheng-shu-wen-jian</id>
     <content type="html"><![CDATA[<p>删除xcode多余的证书描述文件：</p>
 
-<p><img class="top /images/2015-07-13/<a" src="href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#81;&#x51;&#50;&#x30;&#49;&#53;&#48;&#x37;&#49;&#51;&#45;&#49;&#x40;&#x32;&#120;&#46;&#112;&#110;&#x67;">&#81;&#x51;&#50;&#48;&#49;&#x35;&#x30;&#55;&#49;&#x33;&#x2d;&#x31;&#x40;&#50;&#120;&#x2e;&#112;&#110;&#x67;</a>&#8221;></p>
+<p><img class="top /images/2015-07-13/<a" src="href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#58;&#81;&#x51;&#x32;&#x30;&#x31;&#x35;&#x30;&#55;&#x31;&#51;&#45;&#49;&#64;&#50;&#120;&#x2e;&#x70;&#110;&#103;">&#81;&#81;&#50;&#48;&#x31;&#x35;&#48;&#55;&#x31;&#x33;&#x2d;&#x31;&#x40;&#50;&#x78;&#x2e;&#112;&#110;&#103;</a>&#8221;></p>
 
 <p>找到目录：</p>
 

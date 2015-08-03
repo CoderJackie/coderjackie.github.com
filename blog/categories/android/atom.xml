@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: android | 徐佳琦的个人博客]]></title>
+  <link href="http://coderjackie.github.io/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://coderjackie.github.io/"/>
+  <updated>2015-08-03T11:30:31+08:00</updated>
+  <id>http://coderjackie.github.io/</id>
+  <author>
+    <name><![CDATA[徐佳琦]]></name>
+    <email><![CDATA[jackie0613@126.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[JAVA中的四种访问修饰符]]></title>
+    <link href="http://coderjackie.github.io/blog/2015/08/03/jazhong-de-si-chong-fang-wen-xiu-shi-fu/"/>
+    <updated>2015-08-03T10:44:24+08:00</updated>
+    <id>http://coderjackie.github.io/blog/2015/08/03/jazhong-de-si-chong-fang-wen-xiu-shi-fu</id>
+    <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:center;"> 作用域     </th>
+<th style="text-align:center;"> 当前类 </th>
+<th style="text-align:center;"> 同一package </th>
+<th style="text-align:center;"> 子孙类 </th>
+<th style="text-align:center;"> 其他package  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"> public    </td>
+<td style="text-align:center;">   √   </td>
+<td style="text-align:center;">      √     </td>
+<td style="text-align:center;">   √   </td>
+<td style="text-align:center;">      √      </td>
+</tr>
+<tr>
+<td style="text-align:center;"> protected </td>
+<td style="text-align:center;">   √   </td>
+<td style="text-align:center;">      √     </td>
+<td style="text-align:center;">   √   </td>
+<td style="text-align:center;">      ×      </td>
+</tr>
+<tr>
+<td style="text-align:center;"> friendly  </td>
+<td style="text-align:center;">   √   </td>
+<td style="text-align:center;">      √     </td>
+<td style="text-align:center;">   ×   </td>
+<td style="text-align:center;">      ×      </td>
+</tr>
+<tr>
+<td style="text-align:center;"> private   </td>
+<td style="text-align:center;">   √   </td>
+<td style="text-align:center;">      ×     </td>
+<td style="text-align:center;">   ×   </td>
+<td style="text-align:center;">      ×      </td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
+  
+</feed>
