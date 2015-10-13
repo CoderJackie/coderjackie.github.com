@@ -7,13 +7,12 @@
 	<meta name="author" content="徐佳琦" >
 
 	
-	<meta name="description" content="ios 设置UIAlert按钮颜色 需求：将UIAlertView的button文字改成指定颜色： 代码如下： 1
+	<meta name="description" content="ios 禁止某个Method 有时，不希望别人使用某个父类方法，比如，写了一个继承NSObject的类，不希望别人用init方法实例化。 那么可以通过这个方法禁止掉，并且报错提示给别人： 1
 2
 3
 4
 5
-6
-UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@&quot;&quot; &hellip;">
+6 #ifndef DOXYGEN_SHOULD_SKIP_THIS // &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -28,13 +27,12 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@&quot;&quot; &helli
 	
 	<meta name="author" content="徐佳琦" >
 	
-	<meta name="description" content="ios 设置UIAlert按钮颜色 需求：将UIAlertView的button文字改成指定颜色： 代码如下： 1
+	<meta name="description" content="ios 禁止某个Method 有时，不希望别人使用某个父类方法，比如，写了一个继承NSObject的类，不希望别人用init方法实例化。 那么可以通过这个方法禁止掉，并且报错提示给别人： 1
 2
 3
 4
 5
-6
-UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@&quot;&quot; &hellip;">
+6 #ifndef DOXYGEN_SHOULD_SKIP_THIS // &hellip;">
 	<meta name="keywords" content="">
 
 
@@ -117,6 +115,66 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@&quot;&quot; &helli
   
 
 
+<time datetime="2015-07-27T15:57:48+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ios/'>ios</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/07/27/jin-zhi-mou-ge-method/" itemprop="url">禁止某个Method</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>有时，不希望别人使用某个父类方法，比如，写了一个继承NSObject的类，不希望别人用init方法实例化。</p>
+
+<p>那么可以通过这个方法禁止掉，并且报错提示给别人：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="c1">#ifndef DOXYGEN_SHOULD_SKIP_THIS</span>
+</span><span class='line'>
+</span><span class='line'> <span class="sr">//</span> <span class="no">Disallow</span> <span class="n">init</span> <span class="ow">and</span> <span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">add</span> <span class="n">to</span> <span class="n">documentation</span>
+</span><span class='line'> <span class="o">-</span> <span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="n">init</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">unavailable</span><span class="p">(</span><span class="s2">&quot;init is not a supported initializer for this class.&quot;</span><span class="p">)));</span>
+</span><span class='line'>
+</span><span class='line'> <span class="c1">#endif</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<p><img class="top" src="/images/2015-07-27-2/image1.png"></p>
+
+<p><img class="top" src="/images/2015-07-27-2/image2.png"></p>
+
+<hr />
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
 <time datetime="2015-07-27T11:31:07+08:00" data-updated="true" itemprop="datePublished"></time></div>
 		<div class="tags">
 
@@ -168,52 +226,6 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@&quot;&quot; &helli
 
 
 
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-07-13T16:37:54+08:00" data-updated="true" itemprop="datePublished"></time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/ios/'>ios</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/07/13/xcodeshan-chu-duo-yu-zheng-shu-wen-jian/" itemprop="url">删除Xcode多余描述文件</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>删除xcode多余的证书描述文件：</p>
-
-<p><img class="top" src="/images/2015-07-13/QQ20150713-1@2x.png"></p>
-
-<p>找到目录：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">~</span><span class="sr">/Library/</span><span class="no">MobileDevice</span><span class="o">/</span><span class="no">Provisioning</span> <span class="no">Profiles</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>找到对应描述文件名删除，重启Xcode即可。</p>
 
 		
 		
