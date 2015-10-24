@@ -6,7 +6,7 @@ comments: true
 categories: 咖啡
 ---
 
-{% img top /images/2015-10-14/image1.png %}
+{% img top /images/2015-10-24/image1.jpg %}
 
 ---
 
