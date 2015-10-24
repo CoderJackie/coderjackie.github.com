@@ -7,12 +7,7 @@
 	<meta name="author" content="徐佳琦" >
 
 	
-	<meta name="description" content="ios 禁止某个Method 有时，不希望别人使用某个父类方法，比如，写了一个继承NSObject的类，不希望别人用init方法实例化。 那么可以通过这个方法禁止掉，并且报错提示给别人： 1
-2
-3
-4
-5
-6 #ifndef DOXYGEN_SHOULD_SKIP_THIS // &hellip;">
+	<meta name="description" content="ios Xcode每次编译运行，都提示输入用户名和密码 同事每次编译运行项目时，总是提示让输入用户名和密码，还要输入两次 解决方法如下：打开Launchpad -> 其他 -> 钥匙串访问 找到开发证书，打开，选择专用密钥，双击打开： 选择允许所有应用程序访问此项目，然后存储更改，输入密码，允许 &hellip;&#8221;>
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -27,12 +22,7 @@
 	
 	<meta name="author" content="徐佳琦" >
 	
-	<meta name="description" content="ios 禁止某个Method 有时，不希望别人使用某个父类方法，比如，写了一个继承NSObject的类，不希望别人用init方法实例化。 那么可以通过这个方法禁止掉，并且报错提示给别人： 1
-2
-3
-4
-5
-6 #ifndef DOXYGEN_SHOULD_SKIP_THIS // &hellip;">
+	<meta name="description" content="ios Xcode每次编译运行，都提示输入用户名和密码 同事每次编译运行项目时，总是提示让输入用户名和密码，还要输入两次 解决方法如下：打开Launchpad -> 其他 -> 钥匙串访问 找到开发证书，打开，选择专用密钥，双击打开： 选择允许所有应用程序访问此项目，然后存储更改，输入密码，允许 &hellip;&#8221;>
 	<meta name="keywords" content="">
 
 
@@ -115,7 +105,7 @@
   
 
 
-<time datetime="2015-07-27T15:57:48+08:00" data-updated="true" itemprop="datePublished"></time></div>
+<time datetime="2015-10-13T10:43:37+08:00" data-updated="true" itemprop="datePublished"></time></div>
 		<div class="tags">
 
 
@@ -125,34 +115,27 @@
 </div>
 		
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/07/27/jin-zhi-mou-ge-method/" itemprop="url">禁止某个Method</a></h1>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/10/13/xcodemei-ci-bian-yi-yun-xing-,du-ti-shi-shu-ru-yong-hu-ming-he-mi-ma/" itemprop="url">Xcode每次编译运行，都提示输入用户名和密码</a></h1>
 	<div class="entry-content" itemprop="articleBody">
-		<p>有时，不希望别人使用某个父类方法，比如，写了一个继承NSObject的类，不希望别人用init方法实例化。</p>
+		<p>同事每次编译运行项目时，总是提示让输入用户名和密码，还要输入两次</p>
 
-<p>那么可以通过这个方法禁止掉，并且报错提示给别人：</p>
+<p><img class="top" src="/images/2015-10-13/image1@2x.png"></p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="c1">#ifndef DOXYGEN_SHOULD_SKIP_THIS</span>
-</span><span class='line'>
-</span><span class='line'> <span class="sr">//</span> <span class="no">Disallow</span> <span class="n">init</span> <span class="ow">and</span> <span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">add</span> <span class="n">to</span> <span class="n">documentation</span>
-</span><span class='line'> <span class="o">-</span> <span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="n">init</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">unavailable</span><span class="p">(</span><span class="s2">&quot;init is not a supported initializer for this class.&quot;</span><span class="p">)));</span>
-</span><span class='line'>
-</span><span class='line'> <span class="c1">#endif</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>解决方法如下：打开Launchpad -> 其他 -> 钥匙串访问</p>
 
+<p><img class="top" src="/images/2015-10-13/image2@2x.png"></p>
 
-<hr />
+<p>找到开发证书，打开，选择专用密钥，双击打开：</p>
 
-<p><img class="top" src="/images/2015-07-27-2/image1.png"></p>
+<p><img class="top" src="/images/2015-10-13/image3@2x.png"></p>
 
-<p><img class="top" src="/images/2015-07-27-2/image2.png"></p>
+<p>选择允许所有应用程序访问此项目，然后存储更改，输入密码，允许：</p>
 
-<hr />
+<p><img class="top" src="/images/2015-10-13/image4@2x.png"></p>
+
+<p><img class="top" src="/images/2015-10-13/image5@2x.png"></p>
+
+<p>以后每次编译运行就不必多次输入用户名和密码了，妈妈再也不用担心我的学习~</p>
 
 		
 		
@@ -175,56 +158,59 @@
   
 
 
-<time datetime="2015-07-27T11:31:07+08:00" data-updated="true" itemprop="datePublished"></time></div>
+<time datetime="2015-08-03T10:44:24+08:00" data-updated="true" itemprop="datePublished"></time></div>
 		<div class="tags">
 
 
-	<a class='category' href='/blog/categories/ios/'>ios</a>
+	<a class='category' href='/blog/categories/android/'>android</a>
 
 
 </div>
 		
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/07/27/she-zhi-uialertan-niu-yan-se/" itemprop="url">设置UIAlert按钮颜色</a></h1>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/08/03/javazhong-de-si-chong-fang-wen-xiu-shi-fu/" itemprop="url">JAVA中的四种访问修饰符</a></h1>
 	<div class="entry-content" itemprop="articleBody">
-		<p>需求：将UIAlertView的button文字改成指定颜色：</p>
-
-<p><img class="top" src="/images/2015-07-27-1/image1.png"></p>
-
-<p>代码如下：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">UIAlertView</span> <span class="o">*</span><span class="n">alertView</span> <span class="o">=</span> <span class="o">[[</span><span class="no">UIAlertView</span> <span class="n">alloc</span><span class="o">]</span> <span class="ss">initWithTitle</span><span class="p">:</span><span class="err">@</span><span class="s2">&quot;&quot;</span> <span class="ss">message</span><span class="p">:</span><span class="err">@</span><span class="s2">&quot;设置按钮为红色&quot;</span> <span class="ss">delegate</span><span class="p">:</span><span class="kp">nil</span> <span class="ss">cancelButtonTitle</span><span class="p">:</span><span class="err">@</span><span class="s2">&quot;我是红色&quot;</span> <span class="ss">otherButtonTitles</span><span class="p">:</span><span class="kp">nil</span><span class="o">]</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">[[</span><span class="no">UIView</span> <span class="n">appearance</span><span class="o">]</span> <span class="ss">setTintColor</span><span class="p">:</span><span class="o">[</span><span class="no">UIColor</span> <span class="n">redColor</span><span class="o">]]</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">[</span><span class="n">alertView</span> <span class="n">show</span><span class="o">]</span><span class="p">;</span>      
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>然后要在点击按钮的时候将tintColor置空，因为默认UIView appearance的tintColor是为nil的：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">+</span> <span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="ss">alertView</span><span class="p">:(</span><span class="no">UIAlertView</span> <span class="o">*</span><span class="p">)</span><span class="n">alertView</span> <span class="ss">didDismissWithButtonIndex</span><span class="p">:(</span><span class="no">NSInteger</span><span class="p">)</span><span class="n">buttonIndex</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">buttonIndex</span> <span class="o">==</span> <span class="o">[</span><span class="n">alertView</span> <span class="n">cancelButtonIndex</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>      <span class="o">[[</span><span class="no">UIView</span> <span class="n">appearance</span><span class="o">]</span> <span class="ss">setTintColor</span><span class="p">:</span><span class="kp">nil</span><span class="o">]</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
+		<table>
+<thead>
+<tr>
+<th style="text-align:center;"> 作用域     </th>
+<th style="text-align:center;"> 当前类 </th>
+<th style="text-align:center;"> 同一package </th>
+<th style="text-align:center;"> 子孙类 </th>
+<th style="text-align:center;"> 其他package  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"> public    </td>
+<td style="text-align:center;">   √   </td>
+<td style="text-align:center;">      √     </td>
+<td style="text-align:center;">   √   </td>
+<td style="text-align:center;">      √      </td>
+</tr>
+<tr>
+<td style="text-align:center;"> protected </td>
+<td style="text-align:center;">   √   </td>
+<td style="text-align:center;">      √     </td>
+<td style="text-align:center;">   √   </td>
+<td style="text-align:center;">      ×      </td>
+</tr>
+<tr>
+<td style="text-align:center;"> friendly  </td>
+<td style="text-align:center;">   √   </td>
+<td style="text-align:center;">      √     </td>
+<td style="text-align:center;">   ×   </td>
+<td style="text-align:center;">      ×      </td>
+</tr>
+<tr>
+<td style="text-align:center;"> private   </td>
+<td style="text-align:center;">   √   </td>
+<td style="text-align:center;">      ×     </td>
+<td style="text-align:center;">   ×   </td>
+<td style="text-align:center;">      ×      </td>
+</tr>
+</tbody>
+</table>
 
 
 		

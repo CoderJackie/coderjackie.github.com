@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://coderjackie.github.io/blog/2015/10/24/dolce-gusto-capsule/</loc>
+    <lastmod>2015-10-24T10:09:21+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://coderjackie.github.io/blog/2015/10/15/ying-yong-nei-duo-yu-yan-qie-huan-huo-gen-sui-xi-tong/</loc>
+    <lastmod>2015-10-15T00:04:59+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://coderjackie.github.io/blog/2015/10/13/xcodemei-ci-bian-yi-yun-xing-,du-ti-shi-shu-ru-yong-hu-ming-he-mi-ma/</loc>
     <lastmod>2015-10-13T10:43:37+08:00</lastmod>
   </url>
@@ -59,5 +67,23 @@
   </url>
   <url>
     <loc>http://coderjackie.github.io/blog/categories/android/</loc>
+  </url>
+  <url>
+    <loc>http://coderjackie.github.io/blog/categories/ka-pei/</loc>
+  </url>
+  <url>
+    <loc>http://coderjackie.github.io/page2/</loc>
+  </url>
+  <url>
+    <loc>http://coderjackie.github.io/page3/</loc>
+  </url>
+  <url>
+    <loc>http://coderjackie.github.io/page4/</loc>
+  </url>
+  <url>
+    <loc>http://coderjackie.github.io/page5/</loc>
+  </url>
+  <url>
+    <loc>http://coderjackie.github.io/page6/</loc>
   </url>
 </urlset>
