@@ -3,7 +3,7 @@
 		"apps": [],
 		"details": [{
 			"appID": "W8RPAN3PFZ.com.starride.passenger",
-			"paths": ["/starrides/passenger/settings","/starrides/passenger/information","/starrides/passenger/scanqrcode","/starrides/passenger/debugxyz"]
+			"paths": ["/starrides/passenger/settings","/starrides/passenger/information","/starrides/passenger/scanqrcode","/starrides/passenger/debugxyz","/starrides/m-enterprise/pay","/starride/m-enterprise/pay"]
 		}]
 	}
 }
