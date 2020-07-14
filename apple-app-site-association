@@ -1,9 +1,19 @@
 {
-	"applinks": {
-		"apps": [],
-		"details": [{
-			"appID": "W8RPAN3PFZ.com.starride.passenger",
-			"paths": ["/appc/weixin/*",]
-		}]
-	}
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "W8RPAN3PFZ.com.starride.passenger",
+        "paths": [
+          "/appc/*",
+          "NOT /appc/weixin/*"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "W8RPAN3PFZ.com.starride.passenger"
+    ]
+  }
 }
