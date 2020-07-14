@@ -3,7 +3,7 @@
 		"apps": [],
 		"details": [{
 			"appID": "W8RPAN3PFZ.com.starride.passenger",
-			"paths": ["/appc/*","/appc/weixin/*",]
+			"paths": ["/appc/weixin/*",]
 		}]
 	}
 }
