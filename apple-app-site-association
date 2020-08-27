@@ -1,20 +1,20 @@
 {
-    "applinks": {
-        "apps": [
-        ],
-        "details": [
-            {
-                "appID": "W8RPAN3PFZ.com.starride.passenger",
-                "paths": [
-                    "NOT /appc/weixin/*",
-                    "/appc/*"
-                ]
-            }
-        ]
-    },
-    "webcredentials": {
-        "apps": [
-            "W8RPAN3PFZ.com.starride.passenger"
-        ]
-    }
+	"appclips": {
+		"apps": ["W8RPAN3PFZ.com.starride.passenger.Clip"]
+	},
+	"applinks": {
+		"apps": [],
+		"details": [{
+			"appID": "W8RPAN3PFZ.com.starride.passenger",
+			"paths": [
+				"NOT /appc/weixin/*",
+				"/appc/*"
+			]
+		}]
+	},
+	"webcredentials": {
+		"apps": [
+			"W8RPAN3PFZ.com.starride.passenger"
+		]
+	}
 }
